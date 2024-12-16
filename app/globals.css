@@ -1,25 +1,43 @@
 :root {
-  --background: #ffffff;
+  --background: #f7fbff;
   --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --textLight: #e4e7ff;
+  --textGrad: #508aff;
+  --text1Dark: #1e04ad;
+  --text2Dark: #3d0385;
+  --text1Light: #f7fbff24;
+  --text2Medium: #8e7ffd8a;
+  --gradientTextDark1: #569aff;
+  --gradientTextDark2: #24008f;
+  --gradientTextMedium1: #0074ff;
+  --gradientTextMedium2: #5a3dff;
+  --gradientTextLight1: #8abfff;
+  --gradientTextLight2: #d3b3ff;
+  --gradientButtonLight1: #589efa;
+  --gradientButtonLight2: #7a66f9;
+  --gradientLight1: #faebff;
+  --gradientLight2: #d0e6ff;
+  --shadowLight1: #5d89f957;
+  --shadowLight2: #623cf948;
+  --shadowOpacity1: #edf7ff2d;
+  --shadowOpacity2: #c8dbf873;
+  --orange: #e26436;
+  --grey: #343436;
+  --glass: #e1bfff47;
+  --border1: #dcefff;
 }
 
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  margin: 0;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Poppins";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -35,8 +53,14 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+section {
+  width: 85vw;
+  margin: auto;
+}
+
+@media (max-width: 600px) {
+  section {
+    width: calc(100vw - 40px);
+    margin: auto;
   }
 }

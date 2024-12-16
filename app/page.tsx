@@ -1,95 +1,140 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import { Metadata } from "next";
+import { getTrendingCourses } from "@/lib/courses";
+import { getTestimonials } from "@/lib/testimonials";
+import Link from "next/link";
+import HomeBanner from "@/components/HomeBanner";
+import Tech from "@/public/images/Techs.png";
+import Forward from "@/public/images/Forward.png";
+import Online from "@/public/images/Online.png";
 
-export default function Home() {
+import { features, highlights } from "@/lib/content";
+import Highlight from "@/components/Highlight";
+import Course from "@/components/Course";
+import Button from "@/components/Button";
+import Hire from "@/components/Hire";
+
+export const metadata: Metadata = {
+  title: "Home | Software Training Institute",
+  description:
+    "Learn the latest software development skills with our expert-led courses",
+};
+
+export default async function Home() {
+  const trendingCourses = await getTrendingCourses();
+  const testimonials = await getTestimonials();
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <main className={styles.home}>
+      <HomeBanner />
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+      <section className={styles.tech}>
+        <div>
+          <h2>Stay Updated with</h2>
+          <h1>Top Technologies</h1>
+          <span>
+            Cloud Swan offers top technologies which are currently used in the
+            industry
+          </span>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <Image src={Tech} alt={"Top Technologies"}></Image>
+      </section>
+
+      <section className={styles.features}>
+        {features?.map((feature: any) => (
+          <div key={feature?.title} className={styles.feature}>
+            <div></div>
+            <Image src={feature?.image} alt={feature?.title}></Image>
+            <h4>{feature?.title}</h4>
+            <p>{feature?.description}</p>
+          </div>
+        ))}
+      </section>
+
+      <Highlight />
+
+      <section className={styles.trend}>
+        <h2>Trending Courses</h2>
+        <div>
+          {trendingCourses.map((course: any) => (
+            <Course key={course._id} course={course} isTrending={true} />
+          ))}
+        </div>
+        <Link href="/courses">
+          <Button text="All Courses" type={1} />
+        </Link>
+      </section>
+
+      <section className={styles.online}>
+        <div>
+          <h2>Learn at your own pace</h2>
+          <span>with our Online based training</span>
+          <div className={styles.courses}>
+            {trendingCourses?.map((course: any) => (
+              <div key={course?._id}>
+                <Image
+                  src={course?.photo}
+                  alt={course?.name}
+                  width={100}
+                  height={100}
+                ></Image>
+                <span>{course?.name}</span>
+              </div>
+            ))}
+            <Link href={"/courses"}>
+              <Image src={Forward} alt={"All Corses"}></Image>
+            </Link>
+          </div>
+        </div>
+        <Image src={Online} alt={"Online Training"}></Image>
+      </section>
+
+      <Hire />
+
+      {/* 
+
+      <section>
+        <h2>Testimonials</h2>
+        <div className="testimonial-grid">
+          <div className="photo-testimonials">
+            {testimonials
+              .filter((t: any) => !t.isVideo)
+              .map((testimonial: any) => (
+                <div key={testimonial._id} className="testimonial-card">
+                  <Image
+                    src={testimonial.media}
+                    alt={testimonial.name}
+                    width={100}
+                    height={100}
+                  />
+                  <p>{testimonial.name}</p>
+                  <p>
+                    {testimonial.designation} at {testimonial.company}
+                  </p>
+                </div>
+              ))}
+          </div>
+          <div className="video-testimonials">
+            {testimonials
+              .filter((t: any) => t.isVideo)
+              .map((testimonial: any) => (
+                <div key={testimonial._id} className="testimonial-card">
+                  <video
+                    src={testimonial.media}
+                    controls
+                    width={300}
+                    height={200}
+                  />
+                  <p>{testimonial.name}</p>
+                  <p>
+                    {testimonial.designation} at {testimonial.company}
+                  </p>
+                </div>
+              ))}
+          </div>
+        </div>
+      </section> */}
+    </main>
   );
 }

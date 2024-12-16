@@ -1,0 +1,28 @@
+.Button1 {
+  padding: 15px 20px;
+  border-radius: 10px;
+  background: linear-gradient(
+    120deg,
+    var(--gradientButtonLight1),
+    var(--gradientButtonLight2)
+  );
+  font-weight: 600;
+  color: white;
+  box-shadow: -10px -10px 40px var(--shadowLight1),
+    10px 10px 40px var(--shadowLight2);
+}
+
+.Button1 > span {
+  opacity: 0.9;
+}
+
+@media (max-width: 600px) {
+  .Button1 {
+    padding: 10px 15px;
+    box-shadow: -5px -5px 30px var(--shadowLight1),
+      5px 5px 30px var(--shadowLight2);
+  }
+  .Button1 > span {
+    font-size: small;
+  }
+}
