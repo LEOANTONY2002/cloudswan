@@ -2,18 +2,19 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import { Metadata } from "next";
 import { getTrendingCourses } from "@/lib/courses";
-import { getTestimonials } from "@/lib/testimonials";
 import Link from "next/link";
 import HomeBanner from "@/components/HomeBanner";
 import Tech from "@/public/images/Techs.png";
 import Forward from "@/public/images/Forward.png";
 import Online from "@/public/images/Online.png";
 
-import { features, highlights } from "@/lib/content";
+import { features } from "@/lib/content";
 import Highlight from "@/components/Highlight";
 import Course from "@/components/Course";
 import Button from "@/components/Button";
 import Hire from "@/components/Hire";
+import Testimonial from "@/components/Testimonial";
+import { getTestimonials } from "@/lib/testimonials";
 
 export const metadata: Metadata = {
   title: "Home | Software Training Institute",
@@ -91,6 +92,8 @@ export default async function Home() {
       </section>
 
       <Hire />
+
+      <Testimonial testimonials={testimonials} />
 
       {/* 
 

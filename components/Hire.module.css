@@ -9,7 +9,7 @@
   justify-content: center;
   gap: 10px;
   padding: 100px 0;
-  margin-bottom: 100px;
+  margin-bottom: 200px;
 }
 .hire > div {
   display: flex;
@@ -87,6 +87,7 @@
   .hire {
     background-image: url("../public/images/HireBGM.png");
     width: 100vw;
+    margin-bottom: 20px;
   }
   .hire > div {
     width: 80%;

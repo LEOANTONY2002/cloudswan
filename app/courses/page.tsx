@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { getCategories } from "@/lib/categories";
 import { getCoursesByCategory } from "@/lib/courses";
+import HomeBanner from "@/components/HomeBanner";
 
 export const metadata: Metadata = {
   title: "Courses | Software Training Institute",
@@ -14,9 +15,15 @@ export default async function CoursesPage() {
 
   return (
     <main>
-      <h1>Our Courses</h1>
+      
+      <HomeBanner />
 
-      {await Promise.all(
+      <section>
+        <h2>Categories</h2>
+        {categories?.map((category: any) => (<div></div> ))}
+      </section>
+
+      {
         categories.map(async (category: any) => {
           const courses = await getCoursesByCategory(category._id);
           return (
@@ -42,7 +49,7 @@ export default async function CoursesPage() {
             </section>
           );
         })
-      )}
+      }
     </main>
   );
 }

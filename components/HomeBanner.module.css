@@ -14,13 +14,14 @@
   bottom: 0;
   left: 0;
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
   z-index: -1;
   object-fit: fill;
 }
 
 .title {
-  font-size: 96px;
+  font-size: 90px;
+  margin-top: -100px;
   font-weight: 900;
   background: linear-gradient(
     120deg,
@@ -32,7 +33,7 @@
 }
 
 .subtitle {
-  font-size: 64px;
+  font-size: 60px;
   font-weight: 900;
   background: linear-gradient(
     120deg,
@@ -55,13 +56,13 @@
 }
 .wcs > span {
   color: var(--orange);
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 700;
   margin-top: -7px;
 }
 .wcs > p {
   color: var(--grey);
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 700;
   margin-top: -7px;
 }

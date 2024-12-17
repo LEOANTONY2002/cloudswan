@@ -9,22 +9,30 @@
   --text2Medium: #8e7ffd8a;
   --gradientTextDark1: #569aff;
   --gradientTextDark2: #24008f;
-  --gradientTextMedium1: #0074ff;
-  --gradientTextMedium2: #5a3dff;
+  --gradientTextMedium1: #0037ff;
+  --gradientTextMedium2: #a600ff;
   --gradientTextLight1: #8abfff;
   --gradientTextLight2: #d3b3ff;
   --gradientButtonLight1: #589efa;
   --gradientButtonLight2: #7a66f9;
   --gradientLight1: #faebff;
   --gradientLight2: #d0e6ff;
-  --shadowLight1: #5d89f957;
-  --shadowLight2: #623cf948;
+  --shadowLight1: #83a4f857;
+  --shadowLight2: #b16dff48;
   --shadowOpacity1: #edf7ff2d;
   --shadowOpacity2: #c8dbf873;
   --orange: #e26436;
   --grey: #343436;
   --glass: #e1bfff47;
   --border1: #dcefff;
+
+  --testGrad1: #e8e4ff86;
+  --testGrad2: #dfeeff87;
+  --title1: #063CC4;
+  --title2: #B57CFF;
+
+  --profile1: #330FFF;
+  --profile2: #41029A;
 }
 
 html,
@@ -46,6 +54,10 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+*::-webkit-scrollbar {
+  display: none;
 }
 
 a {

@@ -1,3 +1,4 @@
+
 import React from "react";
 import styles from "./Hire.module.css";
 import { companies } from "@/lib/content";

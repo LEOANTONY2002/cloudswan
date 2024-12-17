@@ -7,6 +7,7 @@ const TestimonialSchema = new mongoose.Schema(
     isVideo: { type: Boolean, required: true },
     company: { type: String, required: true },
     designation: { type: String, required: true },
+    message: {type: String, required: false}
   },
   {
     timestamps: { createdAt: true, updatedAt: true },
