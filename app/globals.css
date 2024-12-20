@@ -3,8 +3,8 @@
   --foreground: #171717;
   --textLight: #e4e7ff;
   --textGrad: #508aff;
-  --text1Dark: #1e04ad;
-  --text2Dark: #3d0385;
+  --text1Dark: #02206a;
+  --text2Dark: #440295;
   --text1Light: #f7fbff24;
   --text2Medium: #8e7ffd8a;
   --gradientTextDark1: #569aff;
@@ -28,11 +28,24 @@
 
   --testGrad1: #e8e4ff86;
   --testGrad2: #dfeeff87;
-  --title1: #063CC4;
-  --title2: #B57CFF;
+  --title1: #063cc4;
+  --title2: #b57cff;
 
-  --profile1: #330FFF;
-  --profile2: #41029A;
+  --profile1: #330fff;
+  --profile2: #41029a;
+
+  --btn2: #dddfff;
+  --btn2Border: #a79fff;
+  --btn2Text: #5754fe;
+
+  --courseTitle1: #3988ff;
+  --courseTitle2: #24008f;
+
+  --inputBG: #f7fbff8f;
+  --inputBorder: #aad1f88a;
+
+  --faqBG: #f2f4ff8a;
+  --faqBorder: #2f00ff72;
 }
 
 html,

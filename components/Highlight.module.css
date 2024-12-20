@@ -1,32 +1,30 @@
 .highlights {
-  height: 350px;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 100px auto;
+  background-image: url("../public/images/HighBG.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+.highlights > div {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  position: relative;
-  margin: 100px auto;
-  margin-top: 200px;
-  max-height: 5000px;
-  overflow: hidden;
 }
-.highlights > img {
-  position: absolute;
-  width: 85vw;
-  height: auto;
-  object-fit: fill;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-.highlights > div {
+.highlights > div > div {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 90px;
   margin-top: -40px;
+  margin-bottom: -70px;
 }
-.highlights > div > h2 {
+.highlights > div > div > h2 {
   font-size: 90px;
   font-weight: bolder;
   margin-bottom: -70px;
@@ -34,7 +32,7 @@
   background: linear-gradient(120deg, white, var(--textGrad));
   background-clip: text;
 }
-.highlights > div > span {
+.highlights > div > div > span {
   padding: 30px 0;
   background-color: var(--glass);
   border-radius: 20px;
@@ -48,14 +46,14 @@
 }
 
 @media (max-width: 900px) {
-  .highlights > div {
-    margin-top: 20px;
+  .highlights > div > div {
+    margin-top: -20px;
   }
-  .highlights > div > h2 {
+  .highlights > div > div > h2 {
     font-size: 64px;
     margin-bottom: -50px;
   }
-  .highlights > div > span {
+  .highlights > div > div > span {
     padding: 20px 0;
     min-width: 100px;
     font-size: smaller;
@@ -64,30 +62,31 @@
 
 @media (max-width: 500px) {
   .highlights {
+    background-image: url("../public/images/HighBGM.png");
     width: 100vw;
+    height: 320px;
     flex-wrap: wrap;
     gap: 20px;
     align-items: flex-start;
     justify-content: center;
     padding: 50px auto;
-    gap: 0;
-    max-height: 1000px;
-    height: auto;
-    overflow: visible;
-  }
-  .highlights > img {
-    width: 100vw;
+    gap: 0px;
+    margin-top: 0;
   }
   .highlights > div {
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  .highlights > div > div {
     margin: 0;
     margin-top: 10px;
     width: 40vw;
   }
-  .highlights > div > h2 {
+  .highlights > div > div > h2 {
     font-size: 40px;
     margin-bottom: 0px;
   }
-  .highlights > div > span {
+  .highlights > div > div > span {
     padding: 20px 10px;
     min-width: none;
     max-width: 40vw;

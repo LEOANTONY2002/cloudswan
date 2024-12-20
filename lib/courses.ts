@@ -12,15 +12,16 @@ export async function getTrendingCourses() {
     .populate({ path: "techStack", model: Tech })
     .limit(4)
     .lean();
-  return JSON.parse(JSON.stringify(courses));
+  return courses;
 }
 
-export async function getCoursesByCategory(categoryId: string) {
+export async function getAllCourses() {
   await dbConnect();
-  const courses = await Course.find({
-    category: new Types.ObjectId(categoryId),
-  }).lean();
-  return JSON.parse(JSON.stringify(courses));
+  const courses = await Course.find()
+    .populate("category")
+    .populate("techStack")
+    .lean();
+  return courses;
 }
 
 export async function getCourseBySlug(slug: string) {
@@ -29,5 +30,5 @@ export async function getCourseBySlug(slug: string) {
     .populate({ path: "category", model: Category })
     .populate({ path: "techStack", model: Tech })
     .lean();
-  return JSON.parse(JSON.stringify(course));
+  return course;
 }

@@ -97,7 +97,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 200px;
+  margin-bottom: 50px;
 }
 .online > img {
   max-width: 30vw;

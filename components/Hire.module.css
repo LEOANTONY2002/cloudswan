@@ -8,8 +8,9 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 100px 0;
-  margin-bottom: 200px;
+  margin-bottom: 100px;
+  min-height: 700px;
+  padding: 0;
 }
 .hire > div {
   display: flex;
@@ -33,7 +34,7 @@
   text-align: center;
 }
 .companies {
-  margin-top: 30px;
+  margin-top: 50px;
   width: 65vw;
   display: flex;
   align-items: center;
@@ -68,6 +69,9 @@
 }
 
 @media (max-width: 900px) {
+  .hire {
+    min-height: 30vh;
+  }
   .hire > div > h2 {
     font-size: 28px;
   }
@@ -79,15 +83,20 @@
   }
   .list > a > img {
     max-width: 100px;
-    height: 60px;
+    height: 70px;
+  }
+  .grad1,
+  .grad2 {
+    height: 40px;
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .hire {
     background-image: url("../public/images/HireBGM.png");
     width: 100vw;
     margin-bottom: 20px;
+    min-height: 10vh;
   }
   .hire > div {
     width: 80%;

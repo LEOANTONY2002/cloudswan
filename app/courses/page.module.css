@@ -1,0 +1,78 @@
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 100px auto;
+}
+.categories > h2 {
+  font-size: 36px;
+  width: max-content;
+  background: linear-gradient(
+    120deg,
+    var(--gradientTextDark1),
+    var(--gradientButtonLight2)
+  );
+  color: transparent;
+  background-clip: text;
+}
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.list > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 20px;
+  background: linear-gradient(200deg, var(--testGrad1), var(--testGrad2));
+  /* box-shadow: 5px 15px 40px #e7e7e755; */
+  padding: 15px;
+  width: 250px;
+}
+.list > div > img {
+  /* width: 30px;
+  height: 30px; */
+}
+.list > div > h5 {
+  background: linear-gradient(120deg, var(--text1Dark), var(--text2Dark));
+  color: transparent;
+  background-clip: text;
+}
+.set {
+  margin: 100px auto;
+}
+.set > h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  background: linear-gradient(120deg, var(--text1Dark), var(--text2Dark));
+  color: transparent;
+  background-clip: text;
+  width: max-content;
+}
+.row {
+  display: flex;
+  gap: 30px;
+  overflow-x: scroll;
+}
+
+@media (max-width: 500px) {
+  .list {
+    gap: 20px;
+  }
+  .list > div {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: calc(50vw - 30px);
+    height: 150px;
+  }
+  .list > div > h5 {
+    text-align: center;
+  }
+  .set > h2 {
+    font-size: 20px;
+  }
+}

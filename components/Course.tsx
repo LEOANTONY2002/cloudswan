@@ -1,8 +1,8 @@
-
 import React from "react";
 import styles from "./Course.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import Button from "./Button";
 
 const Course = ({
   course,
@@ -27,11 +27,11 @@ const Course = ({
           ))}
         </div>
       </div>
-      <h3>{course.name}</h3>
-
+      {isTrending ? <h3>{course.name}</h3> : <h2>{course.name}</h2>}
+      {!isTrending && <span>{course?.description}</span>}
       {!isTrending && (
         <Link href={`/courses/${course.slug}`}>
-          <button>Explore</button>
+          <Button type={2} text="Explore" />
         </Link>
       )}
     </div>

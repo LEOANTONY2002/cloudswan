@@ -94,50 +94,6 @@ export default async function Home() {
       <Hire />
 
       <Testimonial testimonials={testimonials} />
-
-      {/* 
-
-      <section>
-        <h2>Testimonials</h2>
-        <div className="testimonial-grid">
-          <div className="photo-testimonials">
-            {testimonials
-              .filter((t: any) => !t.isVideo)
-              .map((testimonial: any) => (
-                <div key={testimonial._id} className="testimonial-card">
-                  <Image
-                    src={testimonial.media}
-                    alt={testimonial.name}
-                    width={100}
-                    height={100}
-                  />
-                  <p>{testimonial.name}</p>
-                  <p>
-                    {testimonial.designation} at {testimonial.company}
-                  </p>
-                </div>
-              ))}
-          </div>
-          <div className="video-testimonials">
-            {testimonials
-              .filter((t: any) => t.isVideo)
-              .map((testimonial: any) => (
-                <div key={testimonial._id} className="testimonial-card">
-                  <video
-                    src={testimonial.media}
-                    controls
-                    width={300}
-                    height={200}
-                  />
-                  <p>{testimonial.name}</p>
-                  <p>
-                    {testimonial.designation} at {testimonial.company}
-                  </p>
-                </div>
-              ))}
-          </div>
-        </div>
-      </section> */}
     </main>
   );
 }

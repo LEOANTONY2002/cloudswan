@@ -13,13 +13,14 @@ const Highlight = () => {
 
   return (
     <section className={styles.highlights}>
-      <Image src={width > 500 ? HighBG : HighBGM} alt={"Highlights"} />
-      {highlights?.map((highlight: any) => (
-        <div key={highlight?.title}>
-          <h2>{highlight?.count}</h2>
-          <span>{highlight?.title}</span>
-        </div>
-      ))}
+      <div>
+        {highlights?.map((highlight: any) => (
+          <div key={highlight?.title}>
+            <h2>{highlight?.count}</h2>
+            <span>{highlight?.title}</span>
+          </div>
+        ))}
+      </div>
     </section>
   );
 };

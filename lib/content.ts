@@ -90,3 +90,62 @@ export const companies = [
     url: "https://google.com",
   },
 ];
+
+export const benefits = [
+  {
+    _id: "1",
+    value: "FREE Demo Class",
+  },
+  {
+    _id: "2",
+    value: "FREE Softskill & Placement Training",
+  },
+  {
+    _id: "3",
+    value:
+      "Tie up with more than 25+ companies from MNC’s , CMM level and domestic IT companies.",
+  },
+  {
+    _id: "4",
+    value: "100% FREE Placement Assistance",
+  },
+  {
+    _id: "5",
+    value: "Course Completion Certificate",
+  },
+  {
+    _id: "6",
+    value: "Training with Real Time Projects",
+  },
+  {
+    _id: "7",
+    value: "Industry-Based Coaching By MNC IT Professionals",
+  },
+];
+
+export const faqs = [
+  {
+    _id: "1",
+    question: "What is the learning methodology at CloudSwan?",
+    answer:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in ",
+  },
+  {
+    _id: "2",
+    question: "What is the learning methodology at CloudSwan?",
+    answer:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in ",
+  },
+  {
+    _id: "3",
+    question: "What is the learning methodology at CloudSwan?",
+    answer:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in ",
+  },
+  {
+    _id: "4",
+    question: "What is the learning methodology at CloudSwan?",
+    answer:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in ",
+  },
+];

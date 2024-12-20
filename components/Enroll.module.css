@@ -1,0 +1,74 @@
+.enroll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+.enroll > h2 {
+  font-size: 90px;
+  background: linear-gradient(120deg, var(--courseTitle1), var(--courseTitle2));
+  color: transparent;
+  background-clip: text;
+  text-align: center;
+  font-weight: 900;
+}
+.enroll > div {
+  padding: 50px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 50px;
+  background: linear-gradient(200deg, var(--testGrad1), var(--testGrad2));
+  margin-top: -60px;
+  backdrop-filter: blur(2px);
+}
+.enroll > div > img {
+  width: 400px;
+  height: auto;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.form > input {
+  width: 300px;
+  height: 45px;
+  border: 1px solid var(--inputBorder);
+  background-color: var(--inputBG);
+  border-radius: 10px;
+  text-indent: 10px;
+}
+.form > button {
+  height: 45px;
+  border-radius: 10px;
+  background: linear-gradient(
+    120deg,
+    var(--gradientButtonLight1),
+    var(--gradientButtonLight2)
+  );
+  font-weight: 600;
+  color: white;
+  box-shadow: -10px -10px 40px var(--shadowOpacity1),
+    10px 10px 40px var(--shadowOpacity2);
+  border: none;
+}
+
+@media (max-width: 500px) {
+  .enroll > h2 {
+    font-size: 40px;
+  }
+  .enroll > div {
+    width: 90vw;
+    margin-top: -30px;
+    padding: 40px auto;
+  }
+  .enroll > div > img {
+    display: none;
+  }
+  .form > input {
+    width: 250px;
+  }
+}

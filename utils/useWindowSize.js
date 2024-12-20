@@ -6,6 +6,7 @@ export function useWindowSize() {
   // Initialize state with undefined width/height so server and client renders match
   // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
   const [windowSize, setWindowSize] = useState({
+    // width: window !== undefined ? window?.screen?.width : 0,
     width: undefined,
     height: undefined,
   });
