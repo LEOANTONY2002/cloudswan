@@ -15,7 +15,7 @@
 }
 .tech > div > h1 {
   font-size: 56px;
-  font-weight: bolder;
+  font-weight: 800;
   background: linear-gradient(
     120deg,
     var(--gradientTextMedium1),

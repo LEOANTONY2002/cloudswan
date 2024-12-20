@@ -6,7 +6,8 @@
   background-position: left bottom;
   height: 650px;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 .content {
   width: 100%;
@@ -15,8 +16,9 @@
   justify-content: right;
   padding: 50px;
   color: #ccbaed;
-  margin-top: 50px;
+  /* margin-top: 100px; */
   gap: 100px;
+  font-size: small;
 }
 .content > div > a {
   text-decoration: underline;

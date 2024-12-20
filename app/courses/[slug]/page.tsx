@@ -7,6 +7,7 @@ import Benefit from "@/public/images/Benefit.png";
 import BenefitIcon from "@/public/images/BenefitIcon.png";
 import { benefits, faqs } from "@/lib/content";
 import Enroll from "@/components/Enroll";
+import { notFound } from "next/navigation";
 
 export async function generateMetadata({
   params,
@@ -16,8 +17,8 @@ export async function generateMetadata({
   const { slug } = await params;
   const course = await getCourseBySlug(slug);
   return {
-    title: `${course?.name} | Software Training Institute`,
-    description: course?.description,
+    title: course ? `${course?.name} | Software Training Institute` : "Cloudswan Software Training Institute",
+    description: course ? course?.description : "Page Not Found!",
   };
 }
 
@@ -29,6 +30,9 @@ export default async function CoursePage({
   const { slug } = await params;
 
   const course = await getCourseBySlug(slug);
+  if (!course) {
+    notFound()
+  }
 
   return (
     <main>

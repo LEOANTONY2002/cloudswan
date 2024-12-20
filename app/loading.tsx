@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react";
 import Loader from "@/public/images/loader.svg";
 import Image from "next/image";
