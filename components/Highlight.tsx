@@ -1,16 +1,10 @@
 "use client";
 
 import React from "react";
-import HighBG from "@/public/images/HighBG.png";
-import HighBGM from "@/public/images/HighBGM.png";
 import styles from "./Highlight.module.css";
 import { highlights } from "@/lib/content";
-import Image from "next/image";
-import { useWindowSize } from "@/utils/useWindowSize";
 
 const Highlight = () => {
-  const { width = 0 } = useWindowSize();
-
   return (
     <section className={styles.highlights}>
       <div>

@@ -4,7 +4,6 @@ import React from "react";
 import styles from "./Enroll.module.css";
 import Image from "next/image";
 import EnrollImg from "@/public/images/Enroll.png";
-import Button from "./Button";
 
 const Enroll = () => {
   return (

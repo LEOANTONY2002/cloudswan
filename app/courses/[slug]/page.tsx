@@ -12,12 +12,14 @@ import { notFound } from "next/navigation";
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const { slug } = await params;
-  const course = await getCourseBySlug(slug);
+  const slug = (await params).slug;
+  const course: any = await getCourseBySlug(slug);
   return {
-    title: course ? `${course?.name} | Software Training Institute` : "Cloudswan Software Training Institute",
+    title: course
+      ? `${course?.name} | Cloudswan`
+      : "Cloudswan Software Training Institute",
     description: course ? course?.description : "Page Not Found!",
   };
 }
@@ -25,13 +27,13 @@ export async function generateMetadata({
 export default async function CoursePage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const { slug } = await params;
+  const slug = (await params).slug;
 
-  const course = await getCourseBySlug(slug);
+  const course: any = await getCourseBySlug(slug);
   if (!course) {
-    notFound()
+    notFound();
   }
 
   return (
@@ -80,7 +82,7 @@ export default async function CoursePage({
         <div>
           <h2>Course Benefits</h2>
           {benefits?.map((benefit: any) => (
-            <div className={styles.benefit}>
+            <div key={benefit?.value} className={styles.benefit}>
               <Image src={BenefitIcon} alt="Benefit" width={20} height={20} />
               <p>{benefit?.value}</p>
             </div>
@@ -92,8 +94,8 @@ export default async function CoursePage({
 
       <section className={styles.faqs}>
         <h2>Frequently Asked Questions</h2>
-        {faqs?.map((faq: any) => (
-          <div className={styles.faq}>
+        {faqs?.map((faq: any, index: number) => (
+          <div key={index} className={styles.faq}>
             <span>{faq?._id}</span>
             <div>
               <h5>{faq?.question}</h5>

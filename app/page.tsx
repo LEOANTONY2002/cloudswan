@@ -47,7 +47,7 @@ export default async function Home() {
           <div key={feature?.title} className={styles.feature}>
             <div></div>
             <Image src={feature?.image} alt={feature?.title}></Image>
-            <h4>{feature?.title}</h4>
+            <h2>{feature?.title}</h2>
             <p>{feature?.description}</p>
           </div>
         ))}

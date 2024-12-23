@@ -1,6 +1,5 @@
 import dbConnect from "./mongoose";
 import Course from "../models/Course";
-import { Types } from "mongoose";
 import Category from "@/models/Category";
 import Tech from "@/models/Tech";
 

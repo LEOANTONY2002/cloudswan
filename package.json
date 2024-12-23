@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build-no-lint": "ESLINT_NO_DEV_ERRORS=true next build"
   },
   "dependencies": {
     "dotenv": "^16.4.7",

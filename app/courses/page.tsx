@@ -1,11 +1,10 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Metadata } from "next";
 import { getCategories } from "@/lib/categories";
 import { getAllCourses } from "@/lib/courses";
-import HomeBanner from "@/components/HomeBanner";
 import styles from "./page.module.css";
 import Course from "@/components/Course";
+import CourseBanner from "@/components/CourseBanner";
 
 export const metadata: Metadata = {
   title: "Courses | Software Training Institute",
@@ -18,7 +17,7 @@ export default async function CoursesPage() {
 
   return (
     <main>
-      <HomeBanner />
+      <CourseBanner />
 
       <section className={styles.categories}>
         <h2>Categories</h2>
@@ -38,7 +37,7 @@ export default async function CoursesPage() {
       </section>
 
       {categories.map(async (category: any) => {
-        let courses = allCourses?.filter(
+        const courses = allCourses?.filter(
           (course: any) => course?.category?._id == category?._id
         );
         return (

@@ -1,8 +1,7 @@
-
 import React from "react";
 import styles from "./Button.module.css";
 
-const Button = ({ type, text }: { type: Number; text: string }) => {
+const Button = ({ type, text }: { type: number; text: string }) => {
   return (
     <div className={type == 1 ? styles.Button1 : styles.Button2}>
       {" "}
