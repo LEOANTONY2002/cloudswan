@@ -4,8 +4,8 @@ import { useWindowSize } from "@/utils/useWindowSize";
 import React from "react";
 import styles from "./HomeBanner.module.css";
 import Image from "next/image";
-import BG from "@/public/images/HomeBG.png";
-import BGM from "@/public/images/HomeBGM.png";
+import BG from "@/public/images/HomeBG.webp";
+import BGM from "@/public/images/HomeBGM.webp";
 import Button from "@/components/Button";
 import Link from "next/link";
 

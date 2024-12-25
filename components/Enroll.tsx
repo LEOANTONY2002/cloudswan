@@ -3,7 +3,7 @@
 import React from "react";
 import styles from "./Enroll.module.css";
 import Image from "next/image";
-import EnrollImg from "@/public/images/Enroll.png";
+import EnrollImg from "@/public/images/Enroll.webp";
 
 const Enroll = () => {
   return (

@@ -1,5 +1,5 @@
 .hire {
-  background-image: url("../public/images/HireBG.png");
+  background-image: url("../public/images/HireBG.webp");
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -93,7 +93,7 @@
 
 @media (max-width: 600px) {
   .hire {
-    background-image: url("../public/images/HireBGM.png");
+    background-image: url("../public/images/HireBGM.webp");
     width: 100vw;
     margin-bottom: 20px;
     min-height: 10vh;

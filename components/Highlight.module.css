@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   margin: 100px auto;
-  background-image: url("../public/images/HighBG.png");
+  background-image: url("../public/images/HighBG.webp");
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -62,7 +62,7 @@
 
 @media (max-width: 500px) {
   .highlights {
-    background-image: url("../public/images/HighBGM.png");
+    background-image: url("../public/images/HighBGM.webp");
     width: 100vw;
     height: 320px;
     flex-wrap: wrap;

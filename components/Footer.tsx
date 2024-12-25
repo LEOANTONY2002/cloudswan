@@ -1,14 +1,14 @@
 import React from "react";
 import styles from "./Footer.module.css";
 import Image from "next/image";
-import Logo from "@/public/images/logo.png";
-import FooterLocation from "@/public/images/FooterLocation.png";
-import FooterMail from "@/public/images/FooterMail.png";
-import FooterPhone from "@/public/images/FooterPhone.png";
-import Facebook from "@/public/images/Facebook.png";
-import WhatsApp from "@/public/images/WhatsApp.png";
-import Instagram from "@/public/images/Instagram.png";
-import Email from "@/public/images/Email.png";
+import Logo from "@/public/images/logo.webp";
+import FooterLocation from "@/public/images/FooterLocation.webp";
+import FooterMail from "@/public/images/FooterMail.webp";
+import FooterPhone from "@/public/images/FooterPhone.webp";
+import Facebook from "@/public/images/Facebook.webp";
+import WhatsApp from "@/public/images/WhatsApp.webp";
+import Instagram from "@/public/images/Instagram.webp";
+import Email from "@/public/images/Email.webp";
 import Link from "next/link";
 
 const Footer = () => {

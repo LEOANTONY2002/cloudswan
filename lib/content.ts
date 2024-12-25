@@ -1,10 +1,10 @@
-import Feat1 from "@/public/images/Feat1.png";
-import Feat2 from "@/public/images/Feat2.png";
-import Feat3 from "@/public/images/Feat3.png";
-import Feat4 from "@/public/images/Feat4.png";
-import Google from "@/public/images/Google.png";
-import Paypal from "@/public/images/Paypal.png";
-import PWC from "@/public/images/PWC.png";
+import Feat1 from "@/public/images/Feat1.webp";
+import Feat2 from "@/public/images/Feat2.webp";
+import Feat3 from "@/public/images/Feat3.webp";
+import Feat4 from "@/public/images/Feat4.webp";
+import Google from "@/public/images/Google.webp";
+import Paypal from "@/public/images/Paypal.webp";
+import PWC from "@/public/images/PWC.webp";
 
 export const features = [
   {

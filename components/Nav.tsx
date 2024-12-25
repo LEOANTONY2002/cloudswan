@@ -3,9 +3,9 @@
 import React from "react";
 import styles from "./Nav.module.css";
 import Image from "next/image";
-import Logo from "@/public/images/logo.png";
-import Mail from "@/public/images/Mail.png";
-import Phone from "@/public/images/Phone.png";
+import Logo from "@/public/images/logo.webp";
+import Mail from "@/public/images/Mail.webp";
+import Phone from "@/public/images/Phone.webp";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 

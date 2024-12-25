@@ -4,9 +4,9 @@ import { Metadata } from "next";
 import { getTrendingCourses } from "@/lib/courses";
 import Link from "next/link";
 import HomeBanner from "@/components/HomeBanner";
-import Tech from "@/public/images/Techs.png";
-import Forward from "@/public/images/Forward.png";
-import Online from "@/public/images/Online.png";
+import Tech from "@/public/images/Techs.webp";
+import Forward from "@/public/images/Forward.webp";
+import Online from "@/public/images/Online.webp";
 
 import { features } from "@/lib/content";
 import Highlight from "@/components/Highlight";

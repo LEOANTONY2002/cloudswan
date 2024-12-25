@@ -1,5 +1,5 @@
 import React from "react";
-import Error from "@/public/images/404.png";
+import Error from "@/public/images/404.webp";
 import Image from "next/image";
 import Button from "@/components/Button";
 import Link from "next/link";
