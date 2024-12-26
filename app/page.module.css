@@ -147,6 +147,7 @@
   border-radius: 30px;
   box-shadow: 5px 10px 40px var(--shadowOpacity2);
   background-color: white;
+  padding: 10px;
 }
 .courses > div > span {
   font-size: 10px;

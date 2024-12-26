@@ -8,6 +8,7 @@ import BenefitIcon from "@/public/images/BenefitIcon.webp";
 import { benefits, faqs } from "@/lib/content";
 import Enroll from "@/components/Enroll";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 
 export async function generateMetadata({
   params,
@@ -65,9 +66,9 @@ export default async function CoursePage({
               </div>
             ))}
           </div>
-          <Button type={1} text="Enroll Now" />
         </div>
         <div className={styles.img}>
+          <p></p>
           <Image
             src={course?.photo}
             alt={course?.name}

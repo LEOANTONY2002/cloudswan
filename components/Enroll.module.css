@@ -41,6 +41,11 @@
   border-radius: 10px;
   text-indent: 10px;
 }
+.form > span {
+  color: rgb(255, 161, 161);
+  font-size: small;
+  text-align: center;
+}
 .form > button {
   height: 45px;
   border-radius: 10px;

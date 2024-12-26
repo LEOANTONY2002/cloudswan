@@ -51,8 +51,8 @@ const Nav = () => {
         <div className={styles.contact}>
           <span>Contact Now</span>
           <div>
-            <Image src={Mail} alt={"Cloudswan"} width={30} height={30}></Image>
-            <Image src={Phone} alt={"Cloudswan"} width={30} height={30}></Image>
+            <Image onClick={() => window.location.href = "mailto:emailaddressforgl@gmail.com"} src={Mail} alt={"Cloudswan"} width={30} height={30}></Image>
+            <Image onClick={() => window.location.href = "tel:9942465624"} src={Phone} alt={"Cloudswan"} width={30} height={30}></Image>
           </div>
         </div>
       </div>

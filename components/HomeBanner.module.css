@@ -7,18 +7,11 @@
   padding: 0 80px;
   position: relative;
   width: 100vw;
+  background-image: url("../public/images/HomeBG.webp");
+  background-repeat: no-repeat;
+  background-position: 100% bottom;
+  background-size: contain;
 }
-
-.bg {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  object-fit: fill;
-}
-
 .title {
   font-size: 90px;
   margin-top: -100px;
@@ -72,6 +65,7 @@
     align-items: center;
     justify-content: flex-start;
     padding: 0;
+    background-image: url("../public/images/HomeBGM.webp");
   }
   .bg {
     height: 75vh;

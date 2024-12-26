@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import { Metadata } from "next";
-import { getTrendingCourses } from "@/lib/courses";
+import { getAllCourses, getTrendingCourses } from "@/lib/courses";
 import Link from "next/link";
 import HomeBanner from "@/components/HomeBanner";
 import Tech from "@/public/images/Techs.webp";
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const trendingCourses = await getTrendingCourses();
+  const courses = await getAllCourses();
   const testimonials = await getTestimonials();
 
   return (
@@ -58,7 +58,7 @@ export default async function Home() {
       <section className={styles.trend}>
         <h2>Trending Courses</h2>
         <div>
-          {trendingCourses.map((course: any) => (
+          {courses?.filter((c: any) => c?.isTrending)?.map((course: any) => (
             <Course key={course._id} course={course} isTrending={true} />
           ))}
         </div>
@@ -72,7 +72,7 @@ export default async function Home() {
           <h2>Learn at your own pace</h2>
           <span>with our Online based training</span>
           <div className={styles.courses}>
-            {trendingCourses?.map((course: any) => (
+            {courses?.filter((c: any) => c?.isOnline)?.map((course: any) => (
               <div key={course?._id}>
                 <Image
                   src={course?.photo}

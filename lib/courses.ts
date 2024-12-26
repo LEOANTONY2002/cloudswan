@@ -5,7 +5,7 @@ import Tech from "@/models/Tech";
 
 export async function getTrendingCourses() {
   await dbConnect();
-  const courses = await Course.find()
+  const courses = await Course.find({isTrending: true})
     .sort({ createdAt: -1 })
     .populate({ path: "category", model: Category })
     .populate({ path: "techStack", model: Tech })

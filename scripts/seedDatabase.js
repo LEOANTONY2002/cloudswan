@@ -6,10 +6,10 @@ import {
   courses,
   testimonials,
 } from "../lib/dummyData.js";
-import Category from "../modelsjs/Category.js";
-import Tech from "../modelsjs/Tech.js";
-import Course from "../modelsjs/Course.js";
-import Testimonial from "../modelsjs/Testimonial.js";
+import Category from "../modelsDB/Category.js";
+import Tech from "../modelsDB/Tech.js";
+import Course from "../modelsDB/Course.js";
+import Testimonial from "../modelsDB/Testimonial.js";
 
 dotenv.config({ path: ".env" });
 

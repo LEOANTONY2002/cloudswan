@@ -1,0 +1,82 @@
+.about {
+    
+}
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* width: calc(100vw - 60px); */
+    height: 100vh;
+    padding-top: 100px;
+}
+.banner > img {
+    width: 40vw;
+    height: auto;
+}
+.banner > div {
+    display: flex;
+    flex-direction: column;
+}
+.banner > div > p {
+    font-weight: 700;
+    font-size: 32px;
+    font-weight: 800;
+    background: linear-gradient(
+        120deg,
+        var(--gradientTextLight1),
+        var(--gradientTextLight2)
+    );
+    color: transparent;
+    background-clip: text;
+    width: max-content;
+}
+.banner > div > h1 {
+    font-size: 128px;
+    line-height: 128px;
+    font-weight: 800;
+    background: linear-gradient(
+        120deg,
+        #2B83FF,
+        #24008F
+      );
+      color: transparent;
+      background-clip: text;
+}
+.banner > div > h4 {
+    font-size: 96px;
+    line-height: 96px;
+    font-weight: 800;
+    background: linear-gradient(
+        120deg,
+        #A984FF,
+        #3D0362
+      );
+      color: transparent;
+      background-clip: text;
+}
+
+.summary {
+    display: flex;
+    align-items: center;
+    margin: 100px auto;
+    gap: 100px;
+}
+.summary > img {
+    width: 40vw;
+    /* height: auto; */
+}
+.summary > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+.summary > div > h2 {
+    background: linear-gradient(
+        120deg,
+        var(--gradientTextLight1),
+        var(--gradientTextLight2)
+    );
+    color: transparent;
+    background-clip: text;
+}
