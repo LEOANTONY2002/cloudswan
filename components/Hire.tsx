@@ -1,11 +1,13 @@
 
 import React from "react";
 import styles from "./Hire.module.css";
-import { companies } from "@/lib/content";
 import Link from "next/link";
 import Image from "next/image";
+import { getCompanies } from "@/lib/companies";
 
-const Hire = () => {
+const Hire = async () => {
+  const companies = await getCompanies()
+
   return (
     <section className={styles.hire}>
       <div>
@@ -26,10 +28,9 @@ const Hire = () => {
               >
                 <Image
                   src={company?.photo}
-                  alt={"All Corses"}
-                  width={0}
-                  height={0}
-                  sizes="100%"
+                  alt={company?.name}
+                  width={100}
+                  height={50}
                 ></Image>
               </Link>
             ))}

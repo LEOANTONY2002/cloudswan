@@ -5,11 +5,13 @@ import {
   techStack,
   courses,
   testimonials,
+  companies,
 } from "../lib/dummyData.js";
 import Category from "../modelsDB/Category.js";
 import Tech from "../modelsDB/Tech.js";
 import Course from "../modelsDB/Course.js";
 import Testimonial from "../modelsDB/Testimonial.js";
+import Company from "../modelsDB/Company.js";
 
 dotenv.config({ path: ".env" });
 
@@ -41,6 +43,10 @@ async function seedDatabase() {
     // Seed testimonials
     await Testimonial.insertMany(testimonials);
     console.log("Testimonials seeded");
+
+    // Seed companies
+    await Company.insertMany(companies);
+    console.log("Companies seeded");
 
     console.log("Database seeded successfully");
   } catch (error) {
