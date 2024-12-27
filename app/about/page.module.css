@@ -1,6 +1,4 @@
-.about {
-    
-}
+
 .banner {
     display: flex;
     align-items: center;
@@ -72,6 +70,9 @@
     gap: 20px;
 }
 .summary > div > h2 {
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 800;
     background: linear-gradient(
         120deg,
         var(--gradientTextLight1),
@@ -79,4 +80,156 @@
     );
     color: transparent;
     background-clip: text;
+}
+.locations > h2, .whys > h2 {
+    background: linear-gradient(120deg, var(--courseTitle1), var(--courseTitle2));
+    color: transparent;
+    background-clip: text;
+    width: max-content;
+    font-size: 30px;
+    font-weight: 800;
+}
+.locations > div, .whys > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 100px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 50px;
+}
+.location {
+    position: relative;
+    overflow: visible;
+    width: 350px;
+}
+.location > span {
+    position: absolute;
+    left: -80px;
+    top: 0;
+    transform: rotate(-90deg);
+    font-weight: 900;
+    font-size: 20px;
+    background: linear-gradient(
+        120deg,
+        #94bbf9,
+        #9e88ff
+      );
+    color: transparent;
+    background-clip: text;
+    margin-top: 80px;
+}
+.location > iframe {
+    border: 0;
+    border-radius: 30px;
+    width: 350px;
+    height: 350px;
+    /* box-shadow: 0 10px 30px var(--shadowOpacity2); */
+    background: linear-gradient(120deg, #a7bcff68, #c6a2ff71);
+    padding: 10px;
+}
+.location > p {
+    font-size: small;
+    text-align: center;
+    padding: 0px 40px;
+    font-weight: 600;
+}
+.whys > div {
+    justify-content: space-evenly;
+    margin-bottom: 100px;
+}
+.why {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+}
+.why > img {
+    width: 70px;
+    height: 70px;
+    padding: 20px;
+    background-color: #F1F2FF;
+    border: 1px solid #DADBFF;
+    border-radius: 20px;
+}
+.why > span {
+    font-size: 14px;
+    font-weight: 600;
+    background: linear-gradient(
+        120deg,
+        #94bbf9,
+        #9e88ff
+      );
+    color: transparent;
+    background-clip: text;
+    width: 90px;
+}
+
+@media (max-width: 600px) {
+    .banner {
+        flex-direction: column-reverse;
+        justify-content: center;
+        gap: 50px;
+    }
+    .banner > img {
+        width: 85vw;
+    }
+    .banner > div {
+        align-items: center;
+    }
+    .banner > div > p {
+        font-size: 30px;
+        line-height: 30px;
+    }
+    .banner > div > h1 {
+        font-size: 90px;
+        line-height: 90px;
+    }
+    .banner > div > h4 {
+        font-size: 50px;
+        line-height: 50px;
+    }
+    .summary {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .summary > img {
+        width: 85vw;
+    }
+    .locations > div {
+        gap: 40px;
+    }
+    .location {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .location > span {
+        left: -45px;
+    }
+    .location > iframe {
+        width: 280px;
+        height: 280px;
+    }
+    .whys > div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+    .why {
+        flex-direction: column;
+        align-items: center;
+    }
+    .why > img {
+        width: 90px;
+        height: 90px;
+        padding: 25px;
+        border-radius: 20px;
+    }
+    .why > span {
+        font-size: 10px;
+        text-align: center;
+        width: 100px;
+    }
 }

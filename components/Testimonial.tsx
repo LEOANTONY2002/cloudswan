@@ -3,6 +3,7 @@
 import React from 'react'
 import styles from './Testimonial.module.css'
 import Image from 'next/image';
+import Person from '@/public/images/Person.png'
 
 const Testimonial = async ({testimonials}: {testimonials: any}) => {
 
@@ -15,7 +16,7 @@ const Testimonial = async ({testimonials}: {testimonials: any}) => {
                 .map((testimonial: any) => (
                     <div key={testimonial?._id} className={styles.testimonial}>
                         <div className={styles.profile}>
-                            <Image src={testimonial?.media} alt={testimonial?.name} width={100} height={100} />
+                            {testimonial?.media ? <Image src={testimonial?.media} alt={testimonial?.name} width={100} height={100} /> : <Image src={Person} alt={testimonial?.name} width={100} height={100} />}
                             <div>
                                 <p>{testimonial?.name}</p>
                                 <span>{testimonial?.designation}</span>

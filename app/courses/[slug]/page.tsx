@@ -91,7 +91,7 @@ export default async function CoursePage({
         </div>
       </section>
 
-      <Enroll />
+      <Enroll course={course?.name} />
 
       <section className={styles.faqs}>
         <h2>Frequently Asked Questions</h2>

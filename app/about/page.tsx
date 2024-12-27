@@ -4,6 +4,7 @@ import Image from 'next/image'
 import AboutBanner from '@/public/images/AboutBanner.png'
 import AboutUs from '@/public/images/AboutUs.png'
 import Button from '@/components/Button'
+import { locations, whys } from '@/lib/content'
 
 export const metadata: Metadata = {
   title: 'About Us | Software Training Institute',
@@ -28,6 +29,33 @@ export default function AboutPage() {
           <h2>About Us</h2>
           <p>We Cloudswan Solution established on 2015 in Coimbatore. We are IS 9001:2015 certified training institute. We provide Top-notch Training and placement across different IT sector. Our features include experienced Instructors, corporate style of training, syllabus based on the company requirements. We offer best online and offline training courses on trending technology.</p>
           <Button type={2} text="Contact Us" />
+        </div>
+      </section>
+
+      <section className={styles.whys}>
+        <h2>Why Us?</h2>
+        <div>
+          {whys?.map((why: any) => (
+            <div className={styles.why}>
+              <Image src={why?.image} alt={why?.title}></Image>
+              <span>{why?.title}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.locations}>
+        <h2>Offline Presence</h2>
+        <div>
+        {
+          locations?.map((location: any) => (
+            <div className={styles.location}>
+              <span>{location?.city}</span>
+              <iframe src={location?.url}  ></iframe>
+              <p>{location?.address}</p>
+            </div>
+          ))
+        }
         </div>
       </section>
     </main>

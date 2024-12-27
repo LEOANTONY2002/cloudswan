@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import styles from "./HomeBanner.module.css";
 import Button from "@/components/Button";
+import Enroll from "./Enroll";
 
 const HomeBanner = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -15,7 +16,10 @@ const HomeBanner = () => {
         with <span>Cloud</span>
         <p>Swan</p>
       </div>
-      <Button text="Contact Us" type={1} />
+      <div onClick={() => setIsOpen(!isOpen)}><Button text="Contact Us" type={1} /></div>
+      {isOpen && <div onClick={() => setIsOpen(!isOpen)} className={styles.modal}>
+        <div onClick={(e) => e.stopPropagation()}><Enroll /></div>
+      </div> }
     </section>
   );
 };

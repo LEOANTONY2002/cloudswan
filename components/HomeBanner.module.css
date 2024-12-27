@@ -59,6 +59,16 @@
   font-weight: 700;
   margin-top: -7px;
 }
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  backdrop-filter: blur(10px);
+}
 
 @media (max-width: 600px) {
   .banner {

@@ -5,6 +5,12 @@ import Feat4 from "@/public/images/Feat4.webp";
 import Google from "@/public/images/Google.webp";
 import Paypal from "@/public/images/Paypal.webp";
 import PWC from "@/public/images/PWC.webp";
+import W1 from "@/public/images/W1.png"
+import W2 from "@/public/images/W2.png"
+import W3 from "@/public/images/W3.png"
+import W4 from "@/public/images/W4.png"
+import W5 from "@/public/images/W5.png"
+
 
 export const features = [
   {
@@ -149,3 +155,39 @@ export const faqs = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in ",
   },
 ];
+
+export const whys = [
+  {
+    title: "Expert Faculty",
+    image: W1
+  },
+  {
+    title: "Flexible Scheduled Classes",
+    image: W2
+  },
+  {
+    title: "Affordable Cost",
+    image: W3
+  },
+  {
+    title: "Ongoing Challenging Assignment",
+    image: W4
+  },
+  {
+    title: "Ensured Interview",
+    image: W5
+  }
+]
+
+export const locations = [
+  {
+    address: "#171, B-Wing, Raj Complex, DPF Street, P N Palayam, Near Lakshmi Mills Stop",
+    city: "COIMBATORE",
+    url: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d244.77088939465835!2d76.9833595!3d11.0135305!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859b4c44847b5%3A0x4ed5b3b244e12629!2sXortican%20Technologies%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1735282309204!5m2!1sen!2sin"
+  },
+  {
+    address: "No: 200A, 4th Street Gandipuram",
+    city: "COIMBATORE",
+    url: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.2712893709713!2d76.9652243754956!3d11.018260754685551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859b4c388bbbb%3A0x10f74e67296be643!2sCloudSwan%20Solution!5e0!3m2!1sen!2sin!4v1735282362137!5m2!1sen!2sin"
+  }
+]
