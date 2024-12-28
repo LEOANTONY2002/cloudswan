@@ -38,8 +38,8 @@
     "modelsDB/Tech.js",
     "modelsDB/Course.js",
     "modelsDB/Category.js",
-    "scripts/seedDatabase.js",
-    "scripts/seedDatabase.js",
+    "seedDatabase.js",
+    "seedDatabase.js",
     "modelsDB/Company.js",
     "modelsDB/Achiever.js"
   ],

@@ -7,21 +7,19 @@ import {
   testimonials,
   companies,
   achievers,
-} from "../lib/dummyData.js";
-import Category from "../modelsDB/Category.js";
-import Tech from "../modelsDB/Tech.js";
-import Course from "../modelsDB/Course.js";
-import Testimonial from "../modelsDB/Testimonial.js";
-import Company from "../modelsDB/Company.js";
-import Achiever from "../modelsDB/Achiever.js";
+} from "./lib/dummyData.js";
+import Category from "./modelsDB/Category.js";
+import Tech from "./modelsDB/Tech.js";
+import Course from "./modelsDB/Course.js";
+import Testimonial from "./modelsDB/Testimonial.js";
+import Company from "./modelsDB/Company.js";
+import Achiever from "./modelsDB/Achiever.js";
 
-dotenv.config({ path: ".env" });
+dotenv.config();
 
 async function seedDatabase() {
   try {
-    await mongoose.connect(
-      "mongodb+srv://name:Password1234@cluster.lc0iq.mongodb.net/cloudswan"
-    );
+    await mongoose.connect(process.env.MONGODB_URI);
     console.log("Connected to MongoDB");
 
     // Clear existing data
@@ -65,6 +63,8 @@ async function seedDatabase() {
 }
 
 seedDatabase();
+
+// console.log(process.env.MONGODB_URI);
 
 // Output:
 // Connected to MongoDB
