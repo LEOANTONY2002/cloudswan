@@ -3,11 +3,11 @@ import mongoose from "mongoose";
 const TestimonialSchema = new mongoose.Schema(
   {
     name: { type: String, required: true },
-    media: { type: String, required: true },
-    isVideo: { type: Boolean, required: true },
-    company: { type: String, required: true },
-    designation: { type: String, required: true },
-    message: {type: String, required: false}
+    media: { type: String },
+    isVideo: { type: Boolean },
+    company: { type: String },
+    designation: { type: String },
+    message: {type: String }
   },
   {
     timestamps: { createdAt: true, updatedAt: true },

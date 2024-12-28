@@ -61,20 +61,24 @@ export default async function CoursePage({
             </div>
             <h1>{course?.name}</h1>
             <p>{course?.description}</p>
-            <span>Technologies Included</span>
-            <div className={styles.techs}>
-              {course?.techStack.map((tech: any) => (
-                <div className={styles.tech} key={tech._id}>
-                  <Image
-                    src={tech.photo}
-                    alt={tech.name}
-                    width={35}
-                    height={35}
-                  />
-                  {tech.name}
+            {course?.techStack?.length > 0 && (
+              <>
+                <span>Technologies Included</span>
+                <div className={styles.techs}>
+                  {course?.techStack.map((tech: any) => (
+                    <div className={styles.tech} key={tech._id}>
+                      <Image
+                        src={tech.photo}
+                        alt={tech.name}
+                        width={35}
+                        height={35}
+                      />
+                      {tech.name}
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </>
+            )}
           </div>
           <div className={styles.img}>
             <p></p>

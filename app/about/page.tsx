@@ -3,9 +3,9 @@ import styles from "./page.module.css";
 import Image from "next/image";
 import AboutBanner from "@/public/images/AboutBanner.png";
 import AboutUs from "@/public/images/AboutUs.png";
-import Button from "@/components/Button";
 import { locations, whys } from "@/lib/content";
 import Head from "next/head";
+import { getAchievers } from "@/lib/achievers";
 
 export const metadata: Metadata = {
   title: "About Us | Software Training Institute",
@@ -19,17 +19,20 @@ const contactJSONLD = {
   name: "Cloudswan Software Training Institute",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "123 Main St",
-    addressLocality: "City Name",
-    addressRegion: "State",
-    postalCode: "12345",
+    streetAddress:
+      "#171, B-Wing, Raj Complex, DPF Street, P N Palayam, Near Lakshmi Mills Stop",
+    addressLocality: "Coimbatore",
+    addressRegion: "Tamil Nadu",
+    postalCode: "641037",
     addressCountry: "Country",
   },
-  telephone: "+1-234-567-8900",
+  telephone: "9942465624",
   email: "online.cloudswan@gmal.com",
 };
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const achievers = await getAchievers();
+
   return (
     <>
       <Head>
@@ -49,7 +52,6 @@ export default function AboutPage() {
         </section>
 
         <section className={styles.summary}>
-          <Image src={AboutUs} alt={"About Us"}></Image>
           <div>
             <h2>About Us</h2>
             <p>
@@ -60,7 +62,6 @@ export default function AboutPage() {
               syllabus based on the company requirements. We offer best online
               and offline training courses on trending technology.
             </p>
-            <Button type={2} text="Contact Us" />
           </div>
         </section>
 
@@ -68,10 +69,25 @@ export default function AboutPage() {
           <h2>Why Us?</h2>
           <div>
             {whys?.map((why: any) => (
-              <div className={styles.why}>
+              <div key={why?.title} className={styles.why}>
                 <Image src={why?.image} alt={why?.title}></Image>
                 <span>{why?.title}</span>
               </div>
+            ))}
+          </div>
+        </section>
+
+        <section className={styles.achievers}>
+          <h2>Our Achievers</h2>
+          <div>
+            {achievers?.map((achiever: any) => (
+              <Image
+                key={achiever?._id}
+                src={achiever?.photo}
+                alt={"Achiever"}
+                width={250}
+                height={250}
+              ></Image>
             ))}
           </div>
         </section>

@@ -6,12 +6,14 @@ import {
   courses,
   testimonials,
   companies,
+  achievers,
 } from "../lib/dummyData.js";
 import Category from "../modelsDB/Category.js";
 import Tech from "../modelsDB/Tech.js";
 import Course from "../modelsDB/Course.js";
 import Testimonial from "../modelsDB/Testimonial.js";
 import Company from "../modelsDB/Company.js";
+import Achiever from "../modelsDB/Achiever.js";
 
 dotenv.config({ path: ".env" });
 
@@ -27,6 +29,8 @@ async function seedDatabase() {
     await Tech.deleteMany({});
     await Course.deleteMany({});
     await Testimonial.deleteMany({});
+    await Company.deleteMany({});
+    await Achiever.deleteMany({});
 
     // Seed categories
     await Category.insertMany(categories);
@@ -47,6 +51,10 @@ async function seedDatabase() {
     // Seed companies
     await Company.insertMany(companies);
     console.log("Companies seeded");
+
+    // Seed achievers
+    await Achiever.insertMany(achievers);
+    console.log("Achievers seeded");
 
     console.log("Database seeded successfully");
   } catch (error) {

@@ -33,7 +33,15 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "lib/dummyData.ts",
-    "utils/useWindowSize.js"
-, "modelsDB/Testimonial.js", "modelsDB/Tech.js", "modelsDB/Course.js", "modelsDB/Category.js", "scripts/seedDatabase.js", "scripts/seedDatabase.js", "modelsDB/Company.js"  ],
+    "utils/useWindowSize.js",
+    "modelsDB/Testimonial.js",
+    "modelsDB/Tech.js",
+    "modelsDB/Course.js",
+    "modelsDB/Category.js",
+    "scripts/seedDatabase.js",
+    "scripts/seedDatabase.js",
+    "modelsDB/Company.js",
+    "modelsDB/Achiever.js"
+  ],
   "exclude": ["node_modules"]
 }

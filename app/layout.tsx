@@ -4,7 +4,6 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { GoogleTagManager } from "@next/third-parties/google";
-import Head from "next/head";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -45,7 +44,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <Head>
+      <head>
         {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{
@@ -59,7 +58,7 @@ export default function RootLayout({
           }}
         ></script>
         {/* End Google Tag Manager */}
-      </Head>
+      </head>
       <body>
         <Nav />
         {children}
@@ -74,16 +73,16 @@ export default function RootLayout({
           ></iframe>
         </noscript>
         {/* End GTM NoScript */}
+        <GoogleTagManager gtmId="AW-959178136" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJSONLD) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJSONLD) }}
+        />
       </body>
-      <GoogleTagManager gtmId="AW-959178136" />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJSONLD) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJSONLD) }}
-      />
     </html>
   );
 }

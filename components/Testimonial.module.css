@@ -58,10 +58,10 @@
     height: 50px;
     border-radius: 15px;
     background: linear-gradient(
-    120deg,
-    var(--profile1),
-    var(--profile2)
-  );
+        120deg,
+        var(--profile1),
+        var(--profile2)
+    );
 }
 .profile > div > p {
     font-weight: 700;
@@ -71,26 +71,43 @@
     font-weight: 600;
     font-size: small;
     background: linear-gradient(
-    90deg,
-    var(--title1),
-    var(--title2)
-  );
-  color: transparent;
-  background-clip: text;
+        90deg,
+        var(--title1),
+        var(--title2)
+    );
+    color: transparent;
+    background-clip: text;
 }
 .line {
     display: flex;
     padding-left: 25px;
 }
-.line > div {
+.line > span {
     width: 7px;
-    height: 100px;
+    height: 80px;
     background: linear-gradient(var(--profile1), var(--profile2), transparent);
+    margin-right: 20px;
 }
 .line > p {
     font-size: small;
     padding: 20px 20px 20px 10px;
 
+}
+.collapsed {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.expanded {
+    display: block;
+}
+.show {
+    font-size: small;
+    text-decoration: underline;
+    color: blueviolet;
+    cursor: pointer;
 }
 
 @media (max-width: 500px) {
