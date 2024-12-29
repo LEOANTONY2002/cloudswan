@@ -10,8 +10,11 @@ import WhatsApp from "@/public/images/WhatsApp.webp";
 import Instagram from "@/public/images/Instagram.webp";
 import Email from "@/public/images/Email.webp";
 import Link from "next/link";
+import { getTrendingCourses } from "@/lib/courses";
 
-const Footer = () => {
+const Footer = async () => {
+  const trendingCorses = await getTrendingCourses();
+
   return (
     <section className={styles.footer}>
       <div className={styles.content}>
@@ -22,10 +25,11 @@ const Footer = () => {
         </div>
         <div>
           <h2>Trending Courses</h2>
-          <Link href={"/courses"}>MERN stack development</Link>
-          <Link href={"/courses"}>MERN stack development</Link>
-          <Link href={"/courses"}>MERN stack development</Link>
-          <Link href={"/courses"}>MERN stack development</Link>
+          {trendingCorses?.map((course: any) => (
+            <Link key={course?._id} href={`/courses/${course?.slug}`}>
+              {course?.name}
+            </Link>
+          ))}
         </div>
         <div className={styles.contact}>
           <h2>Contact</h2>

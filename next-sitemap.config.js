@@ -1,10 +1,11 @@
 /** @type {import('next-sitemap').IConfig} */
 const config = {
-  siteUrl: "https://cloudswansolution.com",
+  siteUrl: "https://www.cloudswansolution.com",
   generateRobotsTxt: true,
   sitemapSize: 5000,
   changefreq: "daily",
   priority: 0.7,
+  outDir: "./public",
   transform: async (config, path) => {
     if (path.includes("/courses/")) {
       const courses = await getAllCourses();
