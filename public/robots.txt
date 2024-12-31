@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.cloudswansolution.com
+
+# Sitemaps
+Sitemap: https://www.cloudswansolution.com/sitemap.xml

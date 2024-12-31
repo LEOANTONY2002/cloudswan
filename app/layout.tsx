@@ -46,7 +46,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         {/* Google Tag Manager */}
-        <script
+        {/* <script
           dangerouslySetInnerHTML={{
             __html: `
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -56,7 +56,7 @@ export default function RootLayout({
               })(window,document,'script','dataLayer','GTM-MBXLWMCQ');
             `,
           }}
-        ></script>
+        ></script> */}
         {/* End Google Tag Manager */}
       </head>
       <body>
@@ -74,13 +74,16 @@ export default function RootLayout({
         </noscript>
         {/* End GTM NoScript */}
         <GoogleTagManager gtmId="AW-959178136" />
+        <GoogleTagManager gtmId="GTM-MBXLWMCQ" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJSONLD) }}
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJSONLD) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJSONLD),
+          }}
         />
       </body>
     </html>

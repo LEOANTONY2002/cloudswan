@@ -14,6 +14,10 @@ import Course from "./modelsDB/Course.js";
 import Testimonial from "./modelsDB/Testimonial.js";
 import Company from "./modelsDB/Company.js";
 import Achiever from "./modelsDB/Achiever.js";
+import fs from "fs";
+import path from "path";
+import { dirname } from "path";
+import { fileURLToPath } from "url";
 
 dotenv.config();
 
@@ -62,14 +66,20 @@ async function seedDatabase() {
   }
 }
 
-seedDatabase();
+// seedDatabase();
+
+async function generateCoursesData() {
+  await mongoose.connect(process.env.MONGODB_URI);
+  console.log("Connected to MongoDB");
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname = dirname(__filename);
+  const courses = await Course.find({}, "slug").lean();
+
+  const filePath = path.join(__dirname, "public", "courses.json");
+  fs.writeFileSync(filePath, JSON.stringify(courses, null, 2));
+  console.log("Courses data generated successfully.");
+}
+
+generateCoursesData();
 
 // console.log(process.env.MONGODB_URI);
-
-// Output:
-// Connected to MongoDB
-// Categories seeded
-// Tech stack seeded
-// Courses seeded
-// Testimonials seeded
-// Database seeded successfully

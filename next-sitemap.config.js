@@ -2,27 +2,26 @@
 const config = {
   siteUrl: "https://www.cloudswansolution.com",
   generateRobotsTxt: true,
-  sitemapSize: 5000,
+  sitemapSize: 5000, // Ensure sitemap won't split, unless you have over 5000 URLs
   changefreq: "daily",
   priority: 0.7,
   outDir: "./public",
+  // Manually define the URLs to be included in the sitemap
   transform: async (config, path) => {
-    if (path.includes("/courses/")) {
-      const courses = await getAllCourses();
-      return courses.map((course) => ({
-        loc: `${config.siteUrl}/courses/${course.slug}`,
+    if (path === "/" || path === "/about" || path === "/courses") {
+      return {
+        loc: `${config.siteUrl}${path}`, // Full URL
         lastmod: new Date().toISOString(),
-        changefreq: config.changefreq,
-        priority: config.priority,
-      }));
+        changefreq: "daily",
+        priority: 0.7,
+      };
     }
-    return {
-      loc: path,
-      lastmod: new Date().toISOString(),
-      changefreq: config.changefreq,
-      priority: config.priority,
-    };
+    // Returning null for any other path to avoid including them in the sitemap
+    return null;
   },
+  // Optionally, disable index file generation
+  // This ensures only a single sitemap.xml is created
+  generateIndexSitemap: false,
 };
 
 export default config;

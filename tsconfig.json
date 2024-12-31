@@ -41,7 +41,8 @@
     "seedDatabase.js",
     "seedDatabase.js",
     "modelsDB/Company.js",
-    "modelsDB/Achiever.js"
+    "modelsDB/Achiever.js",
+    "generateCourses.js"
   ],
   "exclude": ["node_modules"]
 }
