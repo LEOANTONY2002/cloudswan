@@ -70,7 +70,7 @@
 
 @media (max-width: 900px) {
   .hire {
-    min-height: 30vh;
+    height: 50vh;
   }
   .hire > div > h2 {
     font-size: 28px;
