@@ -18,7 +18,7 @@ const Nav = ({ courses = null }) => {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (sessionStorage.getItem("href")) {
+    if (sessionStorage.getItem("hash")) {
       let hash = sessionStorage.getItem("hash");
       document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
       sessionStorage.removeItem("hash");
@@ -57,9 +57,6 @@ const Nav = ({ courses = null }) => {
     } else {
       window.location.href = path;
       sessionStorage.setItem("hash", hash);
-      setTimeout(() => {
-        document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
-      }, 3000);
     }
   };
 
