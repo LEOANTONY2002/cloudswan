@@ -1,4 +1,3 @@
-
 import React from "react";
 import styles from "./Hire.module.css";
 import Link from "next/link";
@@ -6,10 +5,10 @@ import Image from "next/image";
 import { getCompanies } from "@/lib/companies";
 
 const Hire = async () => {
-  const companies = await getCompanies()
+  const companies = await getCompanies();
 
   return (
-    <section className={styles.hire}>
+    <section id="hire" className={styles.hire}>
       <div>
         <h2>Our Hiring Partners</h2>
         <p>

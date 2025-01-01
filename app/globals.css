@@ -3,18 +3,18 @@
   --foreground: #171717;
   --textLight: #e4e7ff;
   --textGrad: #508aff;
-  --text1Dark: #02206a;
+  --text1Dark: #02426a;
   --text2Dark: #440295;
   --text1Light: #f7fbff24;
   --text2Medium: #8e7ffd8a;
   --gradientTextDark1: #569aff;
-  --gradientTextDark2: #24008f;
-  --gradientTextMedium1: #002ed4;
-  --gradientTextMedium2: #a600ff;
+  --gradientTextDark2: #40008f;
+  --gradientTextMedium1: #0178f0;
+  --gradientTextMedium2: #6e0bf8;
   --gradientTextLight1: #8abfff;
   --gradientTextLight2: #d3b3ff;
   --gradientButtonLight1: #589efa;
-  --gradientButtonLight2: #7a66f9;
+  --gradientButtonLight2: #9966f9;
   --gradientLight1: #faebff;
   --gradientLight2: #d0e6ff;
   --shadowLight1: #83a4f857;
@@ -28,18 +28,18 @@
 
   --testGrad1: #e8e4ff86;
   --testGrad2: #dfeeff87;
-  --title1: #063cc4;
-  --title2: #b57cff;
+  --title1: #0158d9;
+  --title2: #9344fa;
 
-  --profile1: #330fff;
+  --profile1: #0f97ff;
   --profile2: #41029a;
 
   --btn2: #dddfff;
   --btn2Border: #a79fff;
-  --btn2Text: #5754fe;
+  --btn2Text: #8154fe;
 
   --courseTitle1: #3988ff;
-  --courseTitle2: #24008f;
+  --courseTitle2: #43008f;
 
   --inputBG: #f7fbff8f;
   --inputBorder: #aad1f88a;

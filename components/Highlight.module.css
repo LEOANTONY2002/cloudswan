@@ -3,8 +3,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 100px auto;
-  background-image: url("../public/images/HighBG.webp");
+  margin: 50px auto;
+  background-image: url("../public/images/HighBG.png");
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -21,13 +21,12 @@
   align-items: center;
   justify-content: center;
   width: 90px;
-  margin-top: -40px;
   margin-bottom: 20px;
 }
 .highlights > div > div > h2 {
   font-size: 90px;
   font-weight: bolder;
-  margin-bottom: -70px;
+  margin-bottom: -50px;
   color: transparent;
   background: linear-gradient(120deg, white, var(--textGrad));
   background-clip: text;
@@ -62,7 +61,7 @@
 
 @media (max-width: 500px) {
   .highlights {
-    background-image: url("../public/images/HighBGM.webp");
+    background-image: url("../public/images/HighBGM.png");
     width: 100vw;
     height: 320px;
     flex-wrap: wrap;
@@ -71,7 +70,8 @@
     justify-content: center;
     padding: 50px auto;
     gap: 0px;
-    margin-top: 0;
+    margin-top: 150px;
+    margin-bottom: 0;
   }
   .highlights > div {
     flex-wrap: wrap;
@@ -91,7 +91,7 @@
     min-width: none;
     max-width: 40vw;
     font-size: 10px;
-    margin-top: -30px;
+    margin-top: -25px;
     border-radius: 10px;
   }
 }

@@ -4,6 +4,7 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { GoogleTagManager } from "@next/third-parties/google";
+import { getAllCourses } from "@/lib/courses";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -37,11 +38,26 @@ const organizationJSONLD = {
   ],
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const courses = await getAllCourses();
+  const serializedCourses = courses.map((course) => ({
+    id: course._id.toString(),
+    name: course.name,
+    description: course.description,
+    photo: course.photo,
+    slug: course.slug,
+    category: course.category,
+    techStack: course.techStack,
+    isTrending: course.isTrending,
+    isOnline: course.isOnline,
+    createdAt: course.createdAt,
+    updatedAt: course.updatedAt,
+  }));
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -60,7 +76,7 @@ export default function RootLayout({
         {/* End Google Tag Manager */}
       </head>
       <body>
-        <Nav />
+        <Nav courses={serializedCourses} />
         {children}
         <Footer />
         {/* GTM NoScript */}

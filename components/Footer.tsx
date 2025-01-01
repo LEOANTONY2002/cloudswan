@@ -62,15 +62,15 @@ const Footer = async () => {
               width={25}
               height={25}
             ></Image>
-            <span>9942465624, 8903835098</span>
+            <span>8903835098, 9942465624</span>
           </div>
         </div>
         <div className={styles.social}>
           <Image src={Logo} alt={"Cloudswan"} width={70} height={70}></Image>
-          <Link href={"https://google.com"} target="_blank">
-            <Image src={Email} alt={"Mail"} width={25} height={25}></Image>
-          </Link>
-          <Link href={"https://google.com"} target="_blank">
+          <Link
+            href={"//api.whatsapp.com/send?phone=8903835098"}
+            target="_blank"
+          >
             <Image
               src={WhatsApp}
               alt={"WhatsApp"}
@@ -78,7 +78,12 @@ const Footer = async () => {
               height={25}
             ></Image>
           </Link>
-          <Link href={"https://google.com"} target="_blank">
+          <Link
+            href={
+              "https://www.facebook.com/p/Cloud-Swan-Technologies-100070345089855/"
+            }
+            target="_blank"
+          >
             <Image
               src={Facebook}
               alt={"Facebook"}
@@ -86,7 +91,10 @@ const Footer = async () => {
               height={25}
             ></Image>
           </Link>
-          <Link href={"https://google.com"} target="_blank">
+          <Link
+            href={"https://www.instagram.com/cloudswan_solution/"}
+            target="_blank"
+          >
             <Image
               src={Instagram}
               alt={"Instagram"}

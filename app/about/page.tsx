@@ -41,6 +41,7 @@ export default async function AboutPage() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(contactJSONLD) }}
         />
       </Head>
+
       <main className={styles.about}>
         <section className={styles.banner}>
           <div>
@@ -65,7 +66,7 @@ export default async function AboutPage() {
           </div>
         </section>
 
-        <section className={styles.whys}>
+        <section id="why" className={styles.whys}>
           <h2>Why Us?</h2>
           <div>
             {whys?.map((why: any) => (
@@ -77,7 +78,7 @@ export default async function AboutPage() {
           </div>
         </section>
 
-        <section className={styles.achievers}>
+        <section id="achievers" className={styles.achievers}>
           <h2>Our Achievers</h2>
           <div>
             {achievers?.map((achiever: any) => (
@@ -92,7 +93,7 @@ export default async function AboutPage() {
           </div>
         </section>
 
-        <section className={styles.locations}>
+        <section id="locations" className={styles.locations}>
           <h2>Offline Presence</h2>
           <div>
             {locations?.map((location: any) => (

@@ -1,7 +1,6 @@
 .enroll {
   /* margin-bottom: 100px; */
   width: max-content;
-
 }
 .enroll > h2 {
   font-size: 90px;
@@ -44,6 +43,19 @@
   color: rgb(255, 161, 161);
   font-size: small;
   text-align: center;
+}
+.form > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.form > div > p {
+  width: 15px;
+  height: 15px;
+  border-radius: 3px;
+  background-color: white;
+  cursor: pointer;
+  border: 2px solid rgb(255, 255, 255);
 }
 .form > button {
   height: 45px;

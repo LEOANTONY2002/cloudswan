@@ -1,151 +1,261 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import styles from "./Nav.module.css";
-import Image from "next/image";
-import Logo from "@/public/images/logo.webp";
-import Mail from "@/public/images/Mail.webp";
-import Phone from "@/public/images/Phone.webp";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import styles from "./Nav.module.css";
+import Logo from "@/public/images/logo.webp";
+import Phone from "@/public/images/Phone.webp";
+import Email from "@/public/images/Mail.webp";
+import Expand from "@/public/images/Expand.png";
+import Menu from "@/public/images/Menu.png";
 import { usePathname } from "next/navigation";
 
-const Nav = () => {
+const Nav = ({ courses = null }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [openSubMenu, setOpenSubMenu] = useState(null);
+  const menuRef = useRef(null);
   const pathname = usePathname();
-  const [show, handleShow] = useState(false);
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 100) {
-        handleShow(true);
-      } else handleShow(false);
-    });
+    if (sessionStorage.getItem("href")) {
+      let hash = sessionStorage.getItem("hash");
+      document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
+      sessionStorage.removeItem("hash");
+    }
+  }, [pathname]);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const toggleSubMenu = (menu) => {
+    setOpenSubMenu(openSubMenu === menu ? null : menu);
+  };
+
+  const handleClickOutside = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      setIsMenuOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
     return () => {
-      window.removeEventListener("scroll", null);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  }, [isMenuOpen]);
+
+  const handleNavigation = (href) => {
+    const [path, hash] = href.split("#");
+    if (pathname === path) {
+      document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.location.href = path;
+      sessionStorage.setItem("hash", hash);
+      setTimeout(() => {
+        document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
+      }, 3000);
+    }
+  };
 
   return (
     <>
+      <div className={styles.stick}>
+        <span>
+          <span>For Enquiry |</span> 8903835098
+        </span>
+        <span className={styles.email}>
+          Lakshmi Mills{" "}
+          <span style={{ margin: "0 10px", fontSize: "16px" }}> | </span>{" "}
+          Gandhipuram
+        </span>
+        <span className={styles.email}>
+          <span>Contact Us |</span> online.cloudswan@gmail.com
+        </span>
+      </div>
       <nav className={styles.nav}>
-        <Image src={Logo} alt={"Cloudswan"} width={60} height={60}></Image>
-        <div>
-          <span></span>
-          <div className={styles.links}>
+        <div className={styles.logo}>
+          <Image src={Logo} alt="Logo" width={50} height={50} />
+        </div>
+        <div className={styles.links}>
+          <div className={styles.link}>
             <Link
-              href={"/"}
+              href="/"
               style={
-                pathname == "/"
-                  ? { color: "var(--textGrad)", fontWeight: 700 }
-                  : {}
+                pathname == "/" ? { color: "#0070f3", fontWeight: 700 } : {}
               }
             >
               Home
             </Link>
-            <Link href={"/#testimonials"}>Testimonials</Link>
+            <div className={styles.sublinks}>
+              <a onClick={() => handleNavigation("/#testimonials")}>
+                Testimonials
+              </a>
+              <a onClick={() => handleNavigation("/#hire")}>Hiring Partners</a>
+              <a onClick={() => handleNavigation("/#trending")}>
+                Trending Courses
+              </a>
+            </div>
+          </div>
+          <div className={styles.link}>
             <Link
-              href={"/about"}
+              href="/about"
               style={
                 pathname == "/about"
-                  ? { color: "var(--textGrad)", fontWeight: 700 }
+                  ? { color: "#0070f3", fontWeight: 700 }
                   : {}
               }
             >
               About
             </Link>
+            <div className={styles.sublinks}>
+              <a onClick={() => handleNavigation("/about#why")}>Why Us</a>
+              <a onClick={() => handleNavigation("/about#achievers")}>
+                Our Achievers
+              </a>
+            </div>
+          </div>
+          <div className={styles.link}>
             <Link
-              href={"/courses"}
+              href="/courses"
               style={
-                pathname == "/courses"
-                  ? { color: "var(--textGrad)", fontWeight: 700 }
+                pathname.includes("courses")
+                  ? { color: "#0070f3", fontWeight: 700 }
                   : {}
               }
             >
               Courses
             </Link>
-          </div>
-          <div className={styles.contact}>
-            <span>Contact Now</span>
-            <div>
-              <Image
-                onClick={() =>
-                  (window.location.href = "mailto:emailaddressforgl@gmail.com")
-                }
-                src={Mail}
-                alt={"Cloudswan"}
-                width={30}
-                height={30}
-              ></Image>
-              <Image
-                onClick={() => (window.location.href = "tel:9942465624")}
-                src={Phone}
-                alt={"Cloudswan"}
-                width={30}
-                height={30}
-              ></Image>
+            <div className={styles.sublinks}>
+              {courses.map((course) => (
+                <Link key={course.id} href={`/courses/${course.slug}`}>
+                  {course.name}
+                </Link>
+              ))}
             </div>
           </div>
         </div>
+        <div className={styles.contact}>
+          <span>Contact Now</span> |
+          <Image
+            onClick={() =>
+              (window.location.href = "mailto:online.cloudswan@gmail.com")
+            }
+            src={Email}
+            alt="Mail"
+            width={30}
+            height={30}
+          />
+          <Image
+            onClick={() => (window.location.href = "tel:9942465624")}
+            src={Phone}
+            alt="Phone"
+            width={30}
+            height={30}
+          />
+        </div>
+        <div className={styles.mobileMenuIcon} onClick={toggleMenu}>
+          <Image src={Menu} alt="More" width={30} height={30} />
+        </div>
       </nav>
-      <nav className={styles.nav}>
-        <Image src={Logo} alt={"Cloudswan"} width={60} height={60}></Image>
-        <div>
-          <span></span>
-          <div className={styles.links}>
-            <Link
-              href={"/"}
-              style={
-                pathname == "/"
-                  ? { color: "var(--textGrad)", fontWeight: 700 }
-                  : {}
-              }
-            >
-              Home
-            </Link>
-            <Link href={"/#testimonials"}>Testimonials</Link>
-            <Link
-              href={"/about"}
-              style={
-                pathname == "/about"
-                  ? { color: "var(--textGrad)", fontWeight: 700 }
-                  : {}
-              }
-            >
-              About
-            </Link>
-            <Link
-              href={"/courses"}
-              style={
-                pathname == "/courses"
-                  ? { color: "var(--textGrad)", fontWeight: 700 }
-                  : {}
-              }
-            >
-              Courses
-            </Link>
-          </div>
-          <div className={styles.contact}>
-            <span>Contact Now</span>
-            <div>
-              <Image
-                onClick={() =>
-                  (window.location.href = "mailto:emailaddressforgl@gmail.com")
-                }
-                src={Mail}
-                alt={"Cloudswan"}
-                width={30}
-                height={30}
-              ></Image>
-              <Image
-                onClick={() => (window.location.href = "tel:9942465624")}
-                src={Phone}
-                alt={"Cloudswan"}
-                width={30}
-                height={30}
-              ></Image>
+      {isMenuOpen && (
+        <div className={styles.mobileMenu} ref={menuRef}>
+          <div className={styles.mobileLinks}>
+            <div className={styles.mobileLink}>
+              <div className={styles.mobileLinkHead}>
+                <Link href="/">Home</Link>
+                <Image
+                  src={Expand}
+                  alt="Expand"
+                  width={20}
+                  height={20}
+                  onClick={() => toggleSubMenu("home")}
+                />
+              </div>
+              {openSubMenu === "home" && (
+                <div className={styles.mobileSublinks}>
+                  <a onClick={() => handleNavigation("/#testimonials")}>
+                    Testimonials
+                  </a>
+                  <a onClick={() => handleNavigation("/#hire")}>
+                    Hiring Partners
+                  </a>
+                  <a onClick={() => handleNavigation("/#trending")}>
+                    Trending Courses
+                  </a>
+                </div>
+              )}
+            </div>
+            <div className={styles.mobileLink}>
+              <div className={styles.mobileLinkHead}>
+                <Link href="/about">About</Link>
+                <Image
+                  src={Expand}
+                  alt="Expand"
+                  width={20}
+                  height={20}
+                  onClick={() => toggleSubMenu("about")}
+                />
+              </div>
+              {openSubMenu === "about" && (
+                <div className={styles.mobileSublinks}>
+                  <a onClick={() => handleNavigation("/about#why")}>Why Us</a>
+                  <a onClick={() => handleNavigation("/about#achievers")}>
+                    Our Achievers
+                  </a>
+                </div>
+              )}
+            </div>
+            <div className={styles.mobileLink}>
+              <div className={styles.mobileLinkHead}>
+                <Link href="/courses">Courses</Link>
+                <Image
+                  src={Expand}
+                  alt="Expand"
+                  width={20}
+                  height={20}
+                  onClick={() => toggleSubMenu("courses")}
+                />
+              </div>
+              {openSubMenu === "courses" && (
+                <div className={styles.mobileSublinks}>
+                  {courses.map((course) => (
+                    <Link key={course.id} href={`/courses/${course.slug}`}>
+                      {course.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+            <div className={styles.mobileContact}>
+              <span>Contact Now</span>
+              <div>
+                <Image
+                  onClick={() =>
+                    (window.location.href = "mailto:online.cloudswan@gmail.com")
+                  }
+                  src={Email}
+                  alt="Mail"
+                  width={30}
+                  height={30}
+                />
+                <Image
+                  onClick={() => (window.location.href = "tel:9942465624")}
+                  src={Phone}
+                  alt="Phone"
+                  width={30}
+                  height={30}
+                />
+              </div>
             </div>
           </div>
         </div>
-      </nav>
+      )}
     </>
   );
 };

@@ -10,19 +10,20 @@ const Enroll = ({ course = null }) => {
   const [email, setEmail] = useState("");
   const [mobile, setMobile] = useState("");
   const [mode, setMode] = useState("");
-  const [time, setTime] = useState("");
   const [isError, setIsError] = useState(false);
 
   const sendMail = () => {
     setIsError(false);
-    if (name == "" || email == "" || mobile == "" || mode == "" || time == "") {
+    if (name == "" || email == "" || mobile == "" || mode == "") {
       setIsError(true);
     } else {
-      window.location.href = `mailto:emailaddressforgl@gmail.com?subject=Training Enquiry&body=Name: ${name} \nEmail: ${email} \nMobile: ${mobile} \nClass Mode: ${mode} \nPreferred Timing: ${time} \n${
+      window.location.href = `mailto:online.cloudswan@gmail.com?subject=Training Enquiry&body=Name: ${name} \nEmail: ${email} \nMobile: ${mobile} \nClass Mode: ${mode} \n${
         course && `Course: ${course}`
       }`;
     }
   };
+
+  console.log(mode);
 
   return (
     <section className={styles.enroll}>
@@ -45,11 +46,24 @@ const Enroll = ({ course = null }) => {
             placeholder="Mobile Number"
             onChange={(e) => setMobile(e.target.value)}
           />
-          <input
-            type="text"
-            placeholder="Class Mode"
-            onChange={(e) => setMode(e.target.value)}
-          />
+
+          <p>Class mode</p>
+          <div>
+            <p
+              onClick={() => setMode("Offline")}
+              style={{
+                backgroundColor: mode === "Offline" ? "#0070f3" : "white",
+              }}
+            ></p>
+            <span>Offline</span>
+            <p
+              onClick={() => setMode("Online")}
+              style={{
+                backgroundColor: mode === "Online" ? "#0070f3" : "white",
+              }}
+            ></p>
+            <span>Online</span>
+          </div>
           {isError && <span>Fill all the fields!</span>}
           <button onClick={() => sendMail()}>Enroll</button>
         </div>

@@ -30,6 +30,8 @@ export default async function Home() {
     <main className={styles.home}>
       <HomeBanner />
 
+      <Highlight />
+
       <section className={styles.tech}>
         <div>
           <h2>Stay Updated with</h2>
@@ -53,14 +55,14 @@ export default async function Home() {
         ))}
       </section>
 
-      <Highlight />
-
-      <section className={styles.trend}>
+      <section id="trending" className={styles.trend}>
         <h2>Trending Courses</h2>
         <div>
-          {courses?.filter((c: any) => c?.isTrending)?.map((course: any) => (
-            <Course key={course._id} course={course} isTrending={true} />
-          ))}
+          {courses
+            ?.filter((c: any) => c?.isTrending)
+            ?.map((course: any) => (
+              <Course key={course._id} course={course} isTrending={true} />
+            ))}
         </div>
         <Link href="/courses">
           <Button text="All Courses" type={1} />
@@ -72,17 +74,19 @@ export default async function Home() {
           <h2>Learn at your own pace</h2>
           <span>with our Online based training</span>
           <div className={styles.courses}>
-            {courses?.filter((c: any) => c?.isOnline)?.map((course: any) => (
-              <div key={course?._id}>
-                <Image
-                  src={course?.photo}
-                  alt={course?.name}
-                  width={100}
-                  height={100}
-                ></Image>
-                <span>{course?.name}</span>
-              </div>
-            ))}
+            {courses
+              ?.filter((c: any) => c?.isOnline)
+              ?.map((course: any) => (
+                <div key={course?._id}>
+                  <Image
+                    src={course?.photo}
+                    alt={course?.name}
+                    width={100}
+                    height={100}
+                  ></Image>
+                  <span>{course?.name}</span>
+                </div>
+              ))}
             <Link href={"/courses"}>
               <Image src={Forward} alt={"All Corses"}></Image>
             </Link>

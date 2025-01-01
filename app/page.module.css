@@ -15,14 +15,14 @@
 }
 .tech > div > h1 {
   font-size: 56px;
-  font-weight: 800;
-  background: linear-gradient(
-    120deg,
-    var(--gradientTextMedium1),
-    var(--gradientTextMedium2)
-  );
+  font-weight: 900;
+  background: linear-gradient(120deg, var(--title1), var(--title2));
   color: transparent;
   background-clip: text;
+  width: max-content;
+}
+.tech > div > span {
+  font-weight: 600;
 }
 .tech > img {
   max-width: 40vw;
@@ -75,11 +75,7 @@
   font-size: 100px;
   font-weight: 900;
   color: transparent;
-  background: linear-gradient(
-    var(--text1Dark),
-    var(--text2Medium),
-    var(--text1Light)
-  );
+  background: linear-gradient(#3e0195, #6714ed77, #f7fbff24);
   background-clip: text;
   text-align: center;
 }

@@ -8,6 +8,9 @@ const nextConfig: NextConfig = {
   images: {
     domains: ["img.icons8.com", "img.freepik.com", "www.freepik.com"],
   },
+  compiler: {
+    removeConsole: true,
+  },
 };
 
 export default nextConfig;
