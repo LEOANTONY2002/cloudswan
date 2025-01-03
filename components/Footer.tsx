@@ -8,7 +8,6 @@ import FooterPhone from "@/public/images/FooterPhone.webp";
 import Facebook from "@/public/images/Facebook.webp";
 import WhatsApp from "@/public/images/WhatsApp.webp";
 import Instagram from "@/public/images/Instagram.webp";
-import Email from "@/public/images/Email.webp";
 import Link from "next/link";
 import { getTrendingCourses } from "@/lib/courses";
 
@@ -68,7 +67,7 @@ const Footer = async () => {
         <div className={styles.social}>
           <Image src={Logo} alt={"Cloudswan"} width={70} height={70}></Image>
           <Link
-            href={"//api.whatsapp.com/send?phone=8903835098"}
+            href={"//api.whatsapp.com/send?phone=918903835098"}
             target="_blank"
           >
             <Image

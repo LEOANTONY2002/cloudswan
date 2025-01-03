@@ -57,6 +57,33 @@ export const highlights = [
   },
 ];
 
+export const cloud = [
+  {
+    name: "AWS",
+    description:
+      "The AWS (Amazon Web Services) Cloud Computing course provides a thorough introduction to cloud services offered by AWS, focusing on building, deploying, and managing applications in the cloud. Students will learn about key AWS services, including EC2 (virtual servers), S3 (storage), RDS (databases), Lambda (serverless computing), and VPC (networking). The course covers setting up scalable and secure cloud infrastructures, implementing IAM (Identity and Access Management), monitoring with CloudWatch, and using CloudFormation for infrastructure as code (IaC). By the end of the course, students will have the skills to design, deploy, and manage cloud-based applications and services using AWS.",
+    photo: "/images/courses/aws.webp",
+    slug: "aws",
+    techStack: [],
+  },
+  {
+    name: "GCP",
+    description:
+      "The GCP (Google Cloud Platform) Cloud Computing course introduces students to Google’s suite of cloud services, focusing on building and managing applications in the cloud. Students will learn about key GCP services, including Compute Engine (virtual machines), Cloud Storage, BigQuery (data analytics), Cloud Functions (serverless computing), and Kubernetes Engine (container orchestration). The course covers cloud architecture, networking, security, and monitoring with tools like Stackdriver. Students will also gain hands-on experience deploying applications, managing infrastructure, and leveraging GCP’s scalable solutions. By the end of the course, students will be proficient in using GCP to design, deploy, and manage cloud applications.",
+    photo: "/images/courses/gcp.webp",
+    slug: "gcp",
+    techStack: [],
+  },
+  {
+    name: "Azure",
+    description:
+      "The Azure Cloud Computing course provides a comprehensive introduction to Microsoft Azure, focusing on building, deploying, and managing applications in the cloud. Students will learn about key Azure services, including Azure Virtual Machines, Azure Blob Storage, Azure Kubernetes Service (AKS), Azure Functions (serverless computing), and Azure SQL Database. The course covers networking, security, monitoring with Azure Monitor, and managing infrastructure with Azure Resource Manager. Students will also explore DevOps practices using Azure DevOps for CI/CD pipelines. By the end of the course, students will be equipped to design, implement, and manage cloud-based solutions on Microsoft Azure.",
+    photo: "/images/courses/azure.webp",
+    slug: "azure",
+    techStack: [],
+  },
+];
+
 export const companies = [
   {
     _id: "1",

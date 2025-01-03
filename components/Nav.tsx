@@ -93,10 +93,13 @@ const Nav = ({ courses = null }) => {
               <a onClick={() => handleNavigation("/#testimonials")}>
                 Testimonials
               </a>
-              <a onClick={() => handleNavigation("/#hire")}>Hiring Partners</a>
               <a onClick={() => handleNavigation("/#trending")}>
                 Trending Courses
               </a>
+              <a onClick={() => handleNavigation("/#cloud")}>
+                Cloud Certifications
+              </a>
+              <a onClick={() => handleNavigation("/#hire")}>Hiring Partners</a>
             </div>
           </div>
           <div className={styles.link}>
@@ -149,7 +152,7 @@ const Nav = ({ courses = null }) => {
             height={30}
           />
           <Image
-            onClick={() => (window.location.href = "tel:9942465624")}
+            onClick={() => (window.location.href = "tel:8903835098")}
             src={Phone}
             alt="Phone"
             width={30}

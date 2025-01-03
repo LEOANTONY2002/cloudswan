@@ -19,7 +19,10 @@ const HomeBanner = () => {
       <h3>in 60 days</h3>
       <div className={styles.btns}>
         <button onClick={() => setIsOpen(!isOpen)}>Enquire Now</button>
-        <div className={styles.call}>
+        <div
+          onClick={() => (window.location.href = "tel:8903835098")}
+          className={styles.call}
+        >
           <Image src={Phone} alt={"Phone"} width={20} height={25} />
           <span>8903835098</span>
         </div>

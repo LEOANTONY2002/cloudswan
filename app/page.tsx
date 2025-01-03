@@ -8,7 +8,7 @@ import Tech from "@/public/images/Techs.webp";
 import Forward from "@/public/images/Forward.webp";
 import Online from "@/public/images/Online.webp";
 
-import { features } from "@/lib/content";
+import { cloud, features } from "@/lib/content";
 import Highlight from "@/components/Highlight";
 import Course from "@/components/Course";
 import Button from "@/components/Button";
@@ -67,6 +67,15 @@ export default async function Home() {
         <Link href="/courses">
           <Button text="All Courses" type={1} />
         </Link>
+      </section>
+
+      <section id="cloud" className={styles.cloud}>
+        <h2>Cloud Certifications</h2>
+        <div>
+          {cloud?.map((course: any) => (
+            <Course key={course.name} course={course} isTrending={false} />
+          ))}
+        </div>
       </section>
 
       <section className={styles.online}>

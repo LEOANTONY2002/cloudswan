@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import styles from "./Enroll.module.css";
 import Image from "next/image";
-import EnrollImg from "@/public/images/Enroll.webp";
+import EnrollImg from "@/public/images/Enroll.png";
 
 const Enroll = ({ course = null }) => {
   const [name, setName] = useState("");

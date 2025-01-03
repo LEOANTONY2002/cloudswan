@@ -5,7 +5,7 @@ import Link from "next/link";
 import Button from "./Button";
 
 const Course = ({
-  course,
+  course = null,
   isTrending,
 }: {
   course: any;
@@ -16,15 +16,18 @@ const Course = ({
       <div className={styles.imgs}>
         <Image src={course.photo} alt={course.name} width={150} height={150} />
         <div className={styles.techs}>
-          {course?.techStack?.map((tech: any, index: number) => (
-            index < 4 && <Image
-            key={tech?.name}
-            src={tech?.photo}
-            alt={tech?.name}
-            width={35}
-            height={35}
-          ></Image>
-          ))}
+          {course?.techStack?.map(
+            (tech: any, index: number) =>
+              index < 4 && (
+                <Image
+                  key={tech?.name}
+                  src={tech?.photo}
+                  alt={tech?.name}
+                  width={35}
+                  height={35}
+                ></Image>
+              )
+          )}
         </div>
       </div>
       {isTrending ? <h3>{course.name}</h3> : <h2>{course.name}</h2>}

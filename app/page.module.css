@@ -64,29 +64,38 @@
   font-size: small;
 }
 
-.trend {
+.trend,
+.cloud {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-bottom: 200px;
 }
-.trend h2 {
+.trend > h2,
+.cloud > h2 {
   font-size: 100px;
   font-weight: 900;
   color: transparent;
+  background: linear-gradient(#0084ff, #0b6ffb77, #f7fcff24);
+  background-clip: text;
+  text-align: center;
+}
+.cloud > h2 {
   background: linear-gradient(#3e0195, #6714ed77, #f7fbff24);
   background-clip: text;
   text-align: center;
 }
-.trend > div {
+.trend > div,
+.cloud > div {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   gap: 20px;
   margin-top: -50px;
 }
-.trend > a {
+.trend > a,
+.cloud > a {
   margin-top: 30px;
 }
 
