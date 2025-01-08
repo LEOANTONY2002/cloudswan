@@ -14,9 +14,14 @@ const HomeBanner = () => {
   return (
     <section className={styles.banner}>
       <Image src={Logo} alt={"Logo"} width={150} height={150} />
-      <h2 className={styles.subtitle}>Learn, build, land your</h2>
-      <h1 className={styles.title}>Dream Job</h1>
-      <h3>in 60 days</h3>
+      <div className={styles.content}>
+        <span></span>
+        <div>
+          <h2 className={styles.subtitle}>Learn, build, land your</h2>
+          <h1 className={styles.title}>Dream Job</h1>
+          <h3>in 60 days</h3>
+        </div>
+      </div>
       <div className={styles.btns}>
         <button onClick={() => setIsOpen(!isOpen)}>Enquire Now</button>
         <div
