@@ -27,7 +27,7 @@ const contactJSONLD = {
     addressCountry: "Country",
   },
   telephone: "9942465624",
-  email: "online.cloudswan@gmal.com",
+  email: "mail.cloudswan@gmal.com",
 };
 
 export default async function AboutPage() {

@@ -72,7 +72,7 @@ const Nav = ({ courses = null }) => {
           Gandhipuram
         </span>
         <span className={styles.email}>
-          <span>Contact Us |</span> online.cloudswan@gmail.com
+          <span>Contact Us |</span> mail.cloudswan@gmail.com
         </span>
       </div>
       <nav className={styles.nav}>
@@ -144,7 +144,7 @@ const Nav = ({ courses = null }) => {
           <span>Contact Now</span> |
           <Image
             onClick={() =>
-              (window.location.href = "mailto:online.cloudswan@gmail.com")
+              (window.location.href = "mailto:mail.cloudswan@gmail.com")
             }
             src={Email}
             alt="Mail"
@@ -237,7 +237,7 @@ const Nav = ({ courses = null }) => {
               <div>
                 <Image
                   onClick={() =>
-                    (window.location.href = "mailto:online.cloudswan@gmail.com")
+                    (window.location.href = "mailto:mail.cloudswan@gmail.com")
                   }
                   src={Email}
                   alt="Mail"

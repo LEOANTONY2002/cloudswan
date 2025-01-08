@@ -17,7 +17,7 @@ const Enroll = ({ course = null }) => {
     if (name == "" || email == "" || mobile == "" || mode == "") {
       setIsError(true);
     } else {
-      window.location.href = `mailto:online.cloudswan@gmail.com?subject=Training Enquiry&body=Name: ${name} \nEmail: ${email} \nMobile: ${mobile} \nClass Mode: ${mode} \n${
+      window.location.href = `mailto:mail.cloudswan@gmail.com?subject=Training Enquiry&body=Name: ${name} \nEmail: ${email} \nMobile: ${mobile} \nClass Mode: ${mode} \n${
         course && `Course: ${course}`
       }`;
     }
