@@ -15,6 +15,7 @@ import Button from "@/components/Button";
 import Hire from "@/components/Hire";
 import Testimonial from "@/components/Testimonial";
 import { getTestimonials } from "@/lib/testimonials";
+import { YouTubeEmbed } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: "Home | Software Training Institute",
@@ -73,7 +74,22 @@ export default async function Home() {
         <h2>Cloud Certifications</h2>
         <div>
           {cloud?.map((course: any) => (
-            <Course key={course.name} course={course} isTrending={false} />
+            <div className={styles.course}>
+              <div className={styles.imgs}>
+                <Image
+                  src={course.photo}
+                  alt={course.name}
+                  width={150}
+                  height={150}
+                />
+              </div>
+              {/* <h3>{course.name}</h3> */}
+              <h2>{course.name}</h2>
+              <span>{course?.description}</span>
+              <Link href={`/courses/${course.slug}`}>
+                <Button type={2} text="Explore" />
+              </Link>
+            </div>
           ))}
         </div>
       </section>
@@ -107,6 +123,15 @@ export default async function Home() {
       <Hire />
 
       <Testimonial testimonials={testimonials} />
+
+      <section className={styles.videos}>
+        <div>
+          <YouTubeEmbed videoid="H8xllNtB1YM" />
+        </div>
+        <div>
+          <YouTubeEmbed videoid="n07Mu1C4kIA" />
+        </div>
+      </section>
     </main>
   );
 }

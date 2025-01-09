@@ -12,9 +12,16 @@
   background-position: right;
   background-size: 50%;
   gap: 10px;
+  margin-top: 50px;
 }
 .content {
   display: flex;
+  padding: 30px;
+  background: linear-gradient(120deg, #ecf4ff, #f8f0ff);
+  width: 70vw;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  z-index: -1;
 }
 .content > span {
   width: 2px;
@@ -24,7 +31,7 @@
   background: linear-gradient(#267ffd, #6b03cc, var(--gradientTextLight1));
 }
 .subtitle {
-  font-size: 40px;
+  font-size: 36px;
   background: linear-gradient(120deg, #267ffd, #033070);
   color: transparent;
   background-clip: text;
@@ -33,8 +40,8 @@
   white-space: nowrap;
 }
 .title {
-  font-size: 90px;
-  line-height: 90px;
+  font-size: 80px;
+  line-height: 80px;
   font-weight: 900;
   background: linear-gradient(120deg, #4da9ff, #6b03cc);
   color: transparent;
@@ -42,8 +49,8 @@
   width: max-content;
 }
 .content h3 {
-  font-size: 50px;
-  line-height: 50px;
+  font-size: 40px;
+  line-height: 40px;
   font-weight: 800;
   background: linear-gradient(
     120deg,
@@ -64,14 +71,14 @@
   border-radius: 20px;
 }
 .btns > button {
-  padding: 15px 30px;
+  padding: 10px 30px;
   color: var(--background);
   background-color: #f87001;
   border-radius: 10px;
   border: none;
   font-weight: 800;
   height: 60px;
-  font-size: 18px;
+  font-size: 14px;
   cursor: pointer;
   box-shadow: 0 10px 30px rgb(255, 162, 128);
 }
@@ -120,9 +127,14 @@
     align-items: center;
     justify-content: flex-start;
     padding: 0;
+    margin: 0;
     background-image: url("../public/images/HomeBGM.png");
     background-size: 100%;
     background-position: bottom;
+  }
+  .content {
+    padding: 0;
+    background: none;
   }
   .content > div {
     width: 100%;

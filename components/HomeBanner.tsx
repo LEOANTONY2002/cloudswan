@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./HomeBanner.module.css";
 import Enroll from "./Enroll";
 import Image from "next/image";
@@ -11,9 +11,17 @@ import Logo from "@/public/images/logo.webp";
 const HomeBanner = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsOpen(true);
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section className={styles.banner}>
-      <Image src={Logo} alt={"Logo"} width={150} height={150} />
+      <Image src={Logo} alt={"Logo"} width={100} height={100} />
       <div className={styles.content}>
         <span></span>
         <div>
