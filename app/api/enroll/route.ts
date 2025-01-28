@@ -1,3 +1,4 @@
+import { sendEnrollEmail } from "@/lib/enroll";
 import nodemailer from "nodemailer";
 
 var transporter = nodemailer.createTransport({
@@ -24,7 +25,8 @@ export async function POST(req) {
 
   try {
     mailOptions.from = email;
-    let mail = await transporter.sendMail(mailOptions);
+    // let mail = await transporter.sendMail(mailOptions);
+    let mail = await sendEnrollEmail(name, email, phone, mode);
     if (mail) {
       return {
         success: true,
