@@ -24,7 +24,7 @@ export async function POST(req) {
 
   try {
     mailOptions.from = email;
-    mailOptions.text = `mailto:mail.cloudswan@gmail.com?subject=Training Enquiry&body=Name: ${name} \nEmail: ${email} \nMobile: ${phone} \nClass Mode: ${mode}`;
+    mailOptions.text = `Name: ${name} \nEmail: ${email} \nMobile: ${phone} \nClass Mode: ${mode}`;
     let mail = await transporter.sendMail(mailOptions);
     if (mail) {
       return new Response(JSON.stringify({ success: true, msg: mail }), {
