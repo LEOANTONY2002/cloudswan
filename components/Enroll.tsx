@@ -4,37 +4,44 @@ import React, { useState } from "react";
 import styles from "./Enroll.module.css";
 import Image from "next/image";
 import EnrollImg from "@/public/images/Enroll.png";
+import Loader from "@/public/images/loader.svg";
 
 const Enroll = ({ course = null }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [mobile, setMobile] = useState("");
   const [mode, setMode] = useState("");
-  const [isError, setIsError] = useState(false);
+  const [error, setError] = useState(null);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [isLoading, setIsLoding] = useState(false);
 
   const sendMail = async () => {
-    setIsError(false);
+    setError(null);
     setIsSuccess(false);
+    setIsLoding(false);
     if (name == "" || email == "" || mobile == "" || mode == "") {
-      setIsError(true);
+      setError("Fill all the fields!");
     } else {
       // window.location.href = `mailto:mail.cloudswan@gmail.com?subject=Training Enquiry&body=Name: ${name} \nEmail: ${email} \nMobile: ${mobile} \nClass Mode: ${mode} \n${
       //   course && `Course: ${course}`
       // }`;
+      setIsLoding(true);
       const response = await fetch("/api/enroll", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name, email, mobile, mode }),
+        body: JSON.stringify({ name, email, mobile, mode, course }),
       });
 
       const data = await response.json();
       if (data?.success) {
         console.log(data?.msg);
         setIsSuccess(true);
+        setIsLoding(false);
       } else {
+        setIsLoding(false);
+        setError("Something went wromg!");
         console.error(data?.msg);
       }
     }
@@ -81,8 +88,16 @@ const Enroll = ({ course = null }) => {
             ></p>
             <span>Online</span>
           </div>
-          {isError && <span>Fill all the fields!</span>}
+          {error && <span>{error}</span>}
           <button onClick={() => sendMail()}>Enroll</button>
+          {isLoading && (
+            <Image
+              src={Loader}
+              width={100}
+              height={100}
+              alt={"Loading"}
+            ></Image>
+          )}
           {isSuccess && <h6>Enquiry sent successfully!</h6>}
         </div>
       </div>

@@ -20,11 +20,13 @@ var mailOptions = {
 
 export async function POST(req) {
   const data = await req.json();
-  const { name, email, phone, mode } = data;
+  const { name, email, mobile, mode, course } = data;
 
   try {
     mailOptions.from = email;
-    mailOptions.text = `Name: ${name} \nEmail: ${email} \nMobile: ${phone} \nClass Mode: ${mode}`;
+    mailOptions.text = course
+      ? `Name: ${name} \nEmail: ${email} \nMobile: ${mobile} \nClass Mode: ${mode} \nCourse: ${course}`
+      : `Name: ${name} \nEmail: ${email} \nMobile: ${mobile} \nClass Mode: ${mode}`;
     let mail = await transporter.sendMail(mailOptions);
     if (mail) {
       return new Response(JSON.stringify({ success: true, msg: mail }), {
