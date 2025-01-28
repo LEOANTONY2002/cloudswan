@@ -27,24 +27,20 @@ export async function POST(req) {
     mailOptions.from = email;
     // let mail = await transporter.sendMail(mailOptions);
     let mail = await sendEnrollEmail(name, email, phone, mode);
-    if (mail) {
-      return {
-        success: true,
-        msg: mail,
-      };
+    if (mail?.success) {
+      return new Response(JSON.stringify({ success: true, msg: mail }), {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      });
     } else {
-      return {
-        success: false,
-        msg: mail,
-      };
+      return new Response(JSON.stringify({ success: false, msg: mail }), {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      });
     }
-    return new Response(JSON.stringify({ success: true, msg: mail }), {
-      status: 200,
-      headers: { "Content-Type": "application/json" },
-    });
   } catch (error) {
     return new Response(JSON.stringify({ success: false, msg: error }), {
-      status: 200,
+      status: 500,
       headers: { "Content-Type": "application/json" },
     });
   }
