@@ -1,4 +1,3 @@
-import { sendEnrollEmail } from "@/lib/enroll";
 import nodemailer from "nodemailer";
 
 var transporter = nodemailer.createTransport({
@@ -15,8 +14,8 @@ var transporter = nodemailer.createTransport({
 var mailOptions = {
   from: "",
   to: "mail.cloudswan@gmail.com",
-  subject: "Sending Email using Node.js",
-  text: "That was easy!",
+  subject: "Course Enquiry",
+  text: "",
 };
 
 export async function POST(req) {
@@ -25,9 +24,9 @@ export async function POST(req) {
 
   try {
     mailOptions.from = email;
-    // let mail = await transporter.sendMail(mailOptions);
-    let mail = await sendEnrollEmail(name, email, phone, mode);
-    if (mail?.success) {
+    mailOptions.text = `mailto:mail.cloudswan@gmail.com?subject=Training Enquiry&body=Name: ${name} \nEmail: ${email} \nMobile: ${phone} \nClass Mode: ${mode}`;
+    let mail = await transporter.sendMail(mailOptions);
+    if (mail) {
       return new Response(JSON.stringify({ success: true, msg: mail }), {
         status: 200,
         headers: { "Content-Type": "application/json" },

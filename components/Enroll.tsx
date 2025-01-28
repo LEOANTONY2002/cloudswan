@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import styles from "./Enroll.module.css";
 import Image from "next/image";
 import EnrollImg from "@/public/images/Enroll.png";
-// import { sendEnrollEmail } from "@/lib/enroll";
 
 const Enroll = ({ course = null }) => {
   const [name, setName] = useState("");
@@ -12,9 +11,11 @@ const Enroll = ({ course = null }) => {
   const [mobile, setMobile] = useState("");
   const [mode, setMode] = useState("");
   const [isError, setIsError] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const sendMail = async () => {
     setIsError(false);
+    setIsSuccess(false);
     if (name == "" || email == "" || mobile == "" || mode == "") {
       setIsError(true);
     } else {
@@ -32,11 +33,10 @@ const Enroll = ({ course = null }) => {
       const data = await response.json();
       if (data?.success) {
         console.log(data?.msg);
+        setIsSuccess(true);
       } else {
         console.error(data?.msg);
       }
-      // let res = await sendEnrollEmail(name, email, mobile, mode);
-      // console.log(res);
     }
   };
 
@@ -83,6 +83,7 @@ const Enroll = ({ course = null }) => {
           </div>
           {isError && <span>Fill all the fields!</span>}
           <button onClick={() => sendMail()}>Enroll</button>
+          {isSuccess && <h6>Enquiry sent successfully!</h6>}
         </div>
       </div>
     </section>

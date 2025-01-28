@@ -71,6 +71,15 @@
     10px 10px 40px var(--shadowOpacity2);
   border: none;
 }
+.form > h6 {
+  background: linear-gradient(
+    120deg,
+    var(--gradientButtonLight1),
+    var(--gradientButtonLight2)
+  );
+  background-clip: text;
+  color: transparent;
+}
 
 @media (max-width: 500px) {
   .enroll > h2 {
