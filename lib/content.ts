@@ -40,15 +40,15 @@ export const features = [
 
 export const highlights = [
   {
-    count: "9+",
+    count: "10+",
     title: "Excellence Years of Service",
   },
   {
-    count: "30+",
+    count: "500+",
     title: "Career Courses",
   },
   {
-    count: "100+",
+    count: "800+",
     title: "Valued Recruiters",
   },
   {
