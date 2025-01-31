@@ -1,7 +1,7 @@
 .stick {
   width: 100vw;
-  height: 40px;
-  background: linear-gradient(90deg, #4583fe, #d073ff);
+  height: 60px;
+  background: linear-gradient(90deg, #53a9ff, #c853ff);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -10,14 +10,16 @@
   z-index: 5;
 }
 .stick > span {
-  color: white;
-  margin: auto 20px;
+  color: rgb(255, 255, 255);
+  margin: auto 25px;
   font-size: small;
-  font-weight: 600;
+  font-weight: 800;
+  font-size: medium;
 }
 .stick > span > span {
-  font-weight: 200;
+  font-weight: 600;
   font-size: smaller;
+  color: rgb(42, 42, 42);
 }
 .nav {
   display: flex;
@@ -29,7 +31,7 @@
   position: relative;
   z-index: 5;
   position: fixed;
-  top: 40px;
+  top: 60px;
   width: 100vw;
   height: 80px;
 }

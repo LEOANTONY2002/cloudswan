@@ -5,9 +5,9 @@ import Logo from "@/public/images/logo.webp";
 import FooterLocation from "@/public/images/FooterLocation.webp";
 import FooterMail from "@/public/images/FooterMail.webp";
 import FooterPhone from "@/public/images/FooterPhone.webp";
-import Facebook from "@/public/images/Facebook.webp";
-import WhatsApp from "@/public/images/WhatsApp.webp";
-import Instagram from "@/public/images/Instagram.webp";
+import Facebook from "@/public/images/Facebook.png";
+import WhatsApp from "@/public/images/WhatsApp.png";
+import Instagram from "@/public/images/Instagram.png";
 import Link from "next/link";
 import { getTrendingCourses } from "@/lib/courses";
 

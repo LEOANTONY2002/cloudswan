@@ -21,7 +21,7 @@ const HomeBanner = () => {
 
   return (
     <section className={styles.banner}>
-      <Image src={Logo} alt={"Logo"} width={100} height={100} />
+      <Image src={Logo} alt={"Logo"} width={120} height={120} />
       <div className={styles.content}>
         <span></span>
         <div>

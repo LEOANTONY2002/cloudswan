@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Metadata } from "next";
 import { getCourseBySlug } from "@/lib/courses";
 import styles from "./page.module.css";
-import Benefit from "@/public/images/Benefit.webp";
+import Benefit from "@/public/images/Benefit.png";
 import BenefitIcon from "@/public/images/BenefitIcon.webp";
 import { benefits, faqs } from "@/lib/content";
 import Enroll from "@/components/Enroll";
@@ -54,8 +54,8 @@ export default async function CoursePage({
               <Image
                 src={course?.category?.photo}
                 alt={course?.category?.name}
-                width={40}
-                height={40}
+                width={50}
+                height={50}
               />
               <h5>{course?.category?.name}</h5>
             </div>

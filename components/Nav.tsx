@@ -4,9 +4,9 @@ import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./Nav.module.css";
-import Logo from "@/public/images/logo.webp";
-import Phone from "@/public/images/Phone.webp";
-import Email from "@/public/images/Mail.webp";
+import Logo from "@/public/images/IconFull.png";
+import Phone from "@/public/images/WhatsApp.png";
+import Email from "@/public/images/Mail.png";
 import Expand from "@/public/images/Expand.png";
 import Menu from "@/public/images/Menu.png";
 import { usePathname } from "next/navigation";
@@ -77,7 +77,7 @@ const Nav = ({ courses = null }) => {
       </div>
       <nav className={styles.nav}>
         <div className={styles.logo}>
-          <Image src={Logo} alt="Logo" width={60} height={60} />
+          <Image src={Logo} alt="Logo" width={200} height={60} />
         </div>
         <div className={styles.links}>
           <div className={styles.link}>
