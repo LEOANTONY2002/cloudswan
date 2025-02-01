@@ -61,19 +61,20 @@ export default async function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Google Tag Manager */}
-        {/* <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-              'https://www.googletagmanager.com/gtm.js?id=${"GTM-MBXLWMCQ"}'+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','GTM-MBXLWMCQ');
-            `,
-          }}
-        ></script> */}
-        {/* End Google Tag Manager */}
+        <meta
+          property="og:title"
+          content="Cloudswan Software Training and Placement Institute"
+        />
+        <meta
+          property="og:description"
+          content="Learn the latest software development skills with our expert-led courses."
+        />
+        <meta
+          property="og:image"
+          content="https://www.cloudswansolution.com/favicon.ico"
+        />
+        <meta property="og:url" content="https://www.cloudswansolution.com" />
+        <meta property="og:type" content="website" />
       </head>
       <body>
         <Nav courses={serializedCourses} />
