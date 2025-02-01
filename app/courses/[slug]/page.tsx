@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Metadata } from "next";
 import { getCourseBySlug } from "@/lib/courses";
 import styles from "./page.module.css";
-import Benefit from "@/public/images/Benefit.png";
+import Benefit from "@/public/images/Benefit.webp";
 import BenefitIcon from "@/public/images/BenefitIcon.webp";
 import { benefits, faqs } from "@/lib/content";
 import Enroll from "@/components/Enroll";

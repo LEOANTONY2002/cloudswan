@@ -1,6 +1,6 @@
 .footer {
   width: 100vw;
-  background-image: url("../public/images/FooterBG.png");
+  background-image: url("../public/images/FooterBG.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: left bottom;
@@ -76,7 +76,7 @@
 
 @media (max-width: 500px) {
   .footer {
-    background-image: url("../public/images/FooterBGM.png");
+    background-image: url("../public/images/FooterBGM.webp");
     background-position: right bottom;
     height: 650px;
     position: relative;

@@ -7,7 +7,7 @@
   padding: 0 80px;
   position: relative;
   width: 100vw;
-  background-image: url("../public/images/HomeBG.png");
+  background-image: url("../public/images/HomeBG.webp");
   background-repeat: no-repeat;
   background-position: right;
   background-size: 50%;
@@ -128,7 +128,7 @@
     justify-content: flex-start;
     padding: 0;
     margin: 0;
-    background-image: url("../public/images/HomeBGM.png");
+    background-image: url("../public/images/HomeBGM.webp");
     background-size: 100%;
     background-position: bottom;
   }

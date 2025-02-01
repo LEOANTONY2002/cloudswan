@@ -4,11 +4,11 @@ import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./Nav.module.css";
-import Logo from "@/public/images/IconFull.png";
-import Phone from "@/public/images/WhatsApp.png";
-import Email from "@/public/images/Mail.png";
-import Expand from "@/public/images/Expand.png";
-import Menu from "@/public/images/Menu.png";
+import Logo from "@/public/images/IconFull.webp";
+import Phone from "@/public/images/WhatsApp.webp";
+import Email from "@/public/images/Mail.webp";
+import Expand from "@/public/images/Expand.webp";
+import Menu from "@/public/images/Menu.webp";
 import { usePathname } from "next/navigation";
 
 const Nav = ({ courses = null }) => {

@@ -30,7 +30,7 @@ const organizationJSONLD = {
   "@type": "EducationalOrganization",
   name: "Cloudswan Software Training Institute",
   url: "https://cloudswansolution.com",
-  logo: "https://cloudswansolution.com/logo.png",
+  logo: "https://cloudswansolution.com/logo.webp",
   sameAs: [
     "https://facebook.com/Cloudswan",
     "https://twitter.com/Cloudswan",

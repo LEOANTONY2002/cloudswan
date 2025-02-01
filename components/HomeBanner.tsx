@@ -4,8 +4,8 @@ import React, { useEffect, useState } from "react";
 import styles from "./HomeBanner.module.css";
 import Enroll from "./Enroll";
 import Image from "next/image";
-import Phone from "@/public/images/HomePhone.png";
-import Location from "@/public/images/HomeLocation.png";
+import Phone from "@/public/images/HomePhone.webp";
+import Location from "@/public/images/HomeLocation.webp";
 import Logo from "@/public/images/logo.webp";
 
 const HomeBanner = () => {

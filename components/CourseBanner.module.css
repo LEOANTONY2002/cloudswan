@@ -7,7 +7,7 @@
   padding: 0 80px;
   position: relative;
   width: 100vw;
-  background-image: url("../public/images/CourseBanner.png");
+  background-image: url("../public/images/CourseBanner.webp");
   background-repeat: no-repeat;
   background-position: 100% bottom;
   background-size: contain;
@@ -75,7 +75,7 @@
     align-items: center;
     justify-content: flex-start;
     padding: 0;
-    background-image: url("../public/images/CourseBannerM.png");
+    background-image: url("../public/images/CourseBannerM.webp");
     background-size: 100%;
   }
   .bg {

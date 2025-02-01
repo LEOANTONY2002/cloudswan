@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 import styles from "./page.module.css";
 import Image from "next/image";
-import AboutBanner from "@/public/images/AboutBanner.png";
-import AboutUs from "@/public/images/AboutUs.png";
+import AboutBanner from "@/public/images/AboutBanner.webp";
+import AboutUs from "@/public/images/AboutUs.webp";
 import { locations, whys } from "@/lib/content";
 import Head from "next/head";
 import { getAchievers } from "@/lib/achievers";

@@ -5,11 +5,11 @@ import Feat4 from "@/public/images/Feat4.webp";
 import Google from "@/public/images/Google.webp";
 import Paypal from "@/public/images/Paypal.webp";
 import PWC from "@/public/images/PWC.webp";
-import W1 from "@/public/images/W1.png";
-import W2 from "@/public/images/W2.png";
-import W3 from "@/public/images/W3.png";
-import W4 from "@/public/images/W4.png";
-import W5 from "@/public/images/W5.png";
+import W1 from "@/public/images/W1.webp";
+import W2 from "@/public/images/W2.webp";
+import W3 from "@/public/images/W3.webp";
+import W4 from "@/public/images/W4.webp";
+import W5 from "@/public/images/W5.webp";
 
 export const features = [
   {
