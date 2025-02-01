@@ -38,6 +38,17 @@ const organizationJSONLD = {
   ],
 };
 
+const sitelinksSearchBoxJSONLD = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  url: "https://cloudswansolution.com",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: "https://cloudswansolution.com/search?q={search_term_string}",
+    "query-input": "required name=search_term_string",
+  },
+};
+
 export default async function RootLayout({
   children,
 }: Readonly<{
@@ -100,6 +111,12 @@ export default async function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(organizationJSONLD),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(sitelinksSearchBoxJSONLD),
           }}
         />
       </body>

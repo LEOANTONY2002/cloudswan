@@ -22,6 +22,7 @@ export async function generateMetadata({
       ? `${course?.name} | Cloudswan`
       : "Cloudswan Software Training Institute",
     description: course ? course?.description : "Page Not Found!",
+    robots: "index, follow",
   };
 }
 

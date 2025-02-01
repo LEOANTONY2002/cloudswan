@@ -65,7 +65,7 @@ export default async function Home() {
               <Course key={course._id} course={course} isTrending={true} />
             ))}
         </div>
-        <Link href="/courses">
+        <Link href="/courses" title="Explore our expert-led courses">
           <Button text="All Courses" type={1} />
         </Link>
       </section>
@@ -86,7 +86,10 @@ export default async function Home() {
               {/* <h3>{course.name}</h3> */}
               <h2>{course.name}</h2>
               <span>{course?.description}</span>
-              <Link href={`/courses/${course.slug}`}>
+              <Link
+                href={`/courses/${course.slug}`}
+                title="Explore our expert-led courses"
+              >
                 <Button type={2} text="Explore" />
               </Link>
             </div>
@@ -112,7 +115,7 @@ export default async function Home() {
                   <span>{course?.name}</span>
                 </div>
               ))}
-            <Link href={"/courses"}>
+            <Link href={"/courses"} title="Explore our expert-led courses">
               <Image src={Forward} alt={"All Corses"}></Image>
             </Link>
           </div>

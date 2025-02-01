@@ -19,8 +19,12 @@ const Footer = async () => {
       <div className={styles.content}>
         <div>
           <h2>Company</h2>
-          <Link href={"/about"}>About Us</Link>
-          <Link href={"/courses"}>Courses</Link>
+          <Link href={"/about"} title="Learn more about us">
+            About Us
+          </Link>
+          <Link href={"/courses"} title="Explore our expert-led courses">
+            Courses
+          </Link>
         </div>
         <div>
           <h2>Trending Courses</h2>

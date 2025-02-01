@@ -10,6 +10,11 @@ import Head from "next/head";
 export const metadata: Metadata = {
   title: "Courses | Software Training Institute",
   description: "Browse our wide range of software development courses",
+  robots: "index, follow",
+  openGraph: {
+    title: "Courses | Software Training Institute",
+    description: "Browse our wide range of software development courses",
+  },
 };
 
 export default async function CoursesPage() {

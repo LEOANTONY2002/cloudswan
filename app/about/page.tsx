@@ -11,6 +11,12 @@ export const metadata: Metadata = {
   title: "About Us | Software Training Institute",
   description:
     "Learn more about our software training institute and our mission",
+  robots: "index, follow",
+  openGraph: {
+    title: "About Us | Software Training Institute",
+    description:
+      "Learn more about our software training institute and our mission",
+  },
 };
 
 const contactJSONLD = {

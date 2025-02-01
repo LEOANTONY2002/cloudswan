@@ -105,6 +105,7 @@ const Nav = ({ courses = null }) => {
           <div className={styles.link}>
             <Link
               href="/about"
+              title="Learn more about us"
               style={
                 pathname == "/about"
                   ? { color: "#0070f3", fontWeight: 700 }
@@ -123,6 +124,7 @@ const Nav = ({ courses = null }) => {
           <div className={styles.link}>
             <Link
               href="/courses"
+              title="Explore our expert-led courses"
               style={
                 pathname.includes("courses")
                   ? { color: "#0070f3", fontWeight: 700 }
@@ -193,7 +195,9 @@ const Nav = ({ courses = null }) => {
             </div>
             <div className={styles.mobileLink}>
               <div className={styles.mobileLinkHead}>
-                <Link href="/about">About</Link>
+                <Link href="/about" title="Learn more about us">
+                  About
+                </Link>
                 <Image
                   src={Expand}
                   alt="Expand"
@@ -213,7 +217,9 @@ const Nav = ({ courses = null }) => {
             </div>
             <div className={styles.mobileLink}>
               <div className={styles.mobileLinkHead}>
-                <Link href="/courses">Courses</Link>
+                <Link href="/courses" title="Explore our expert-led courses">
+                  Courses
+                </Link>
                 <Image
                   src={Expand}
                   alt="Expand"
