@@ -245,7 +245,7 @@ const Nav = ({ courses = null }) => {
                   height={30}
                 />
                 <Image
-                  onClick={() => (window.location.href = "tel:9942465624")}
+                  onClick={() => (window.location.href = "tel:8903835098")}
                   src={Phone}
                   alt="Phone"
                   width={30}
