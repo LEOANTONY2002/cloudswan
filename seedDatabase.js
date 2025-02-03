@@ -66,7 +66,7 @@ async function seedDatabase() {
   }
 }
 
-// seedDatabase();
+seedDatabase();
 
 async function generateCoursesData() {
   await mongoose.connect(process.env.MONGODB_URI);
@@ -80,6 +80,6 @@ async function generateCoursesData() {
   console.log("Courses data generated successfully.");
 }
 
-generateCoursesData();
+// generateCoursesData();
 
 // console.log(process.env.MONGODB_URI);
