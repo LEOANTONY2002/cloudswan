@@ -8,7 +8,7 @@ import Tech from "@/public/images/Techs.webp";
 import Forward from "@/public/images/Forward.webp";
 import Online from "@/public/images/Online.webp";
 
-import { cloud, features } from "@/lib/content";
+import { cloud, features, videos } from "@/lib/content";
 import Highlight from "@/components/Highlight";
 import Course from "@/components/Course";
 import Button from "@/components/Button";
@@ -128,12 +128,11 @@ export default async function Home() {
       <Testimonial testimonials={testimonials} />
 
       <section className={styles.videos}>
-        <div>
-          <YouTubeEmbed videoid="H8xllNtB1YM" />
-        </div>
-        <div>
-          <YouTubeEmbed videoid="n07Mu1C4kIA" />
-        </div>
+        {videos?.map((video) => (
+          <div>
+            <YouTubeEmbed videoid={video} />
+          </div>
+        ))}
       </section>
     </main>
   );

@@ -71,6 +71,9 @@ const Nav = ({ courses = null }) => {
           <span style={{ margin: "0 10px", fontSize: "16px" }}> | </span>{" "}
           Gandhipuram
         </span>
+        <p>
+          Hiring Trainers <span>mail.cloudswan@gmail.com</span>
+        </p>
         <span className={styles.email}>
           <span>Contact Us |</span> mail.cloudswan@gmail.com
         </span>
@@ -81,14 +84,23 @@ const Nav = ({ courses = null }) => {
         </div>
         <div className={styles.links}>
           <div className={styles.link}>
-            <Link
-              href="/"
-              style={
-                pathname == "/" ? { color: "#0070f3", fontWeight: 700 } : {}
-              }
-            >
-              Home
-            </Link>
+            <div className={styles.dp}>
+              <Link
+                href="/"
+                style={
+                  pathname == "/" ? { color: "#0070f3", fontWeight: 700 } : {}
+                }
+              >
+                Home
+              </Link>
+              <Image
+                src={Expand}
+                alt="Expand"
+                width={15}
+                height={15}
+                onClick={() => toggleSubMenu("home")}
+              />
+            </div>
             <div className={styles.sublinks}>
               <a onClick={() => handleNavigation("/#testimonials")}>
                 Testimonials
@@ -103,17 +115,26 @@ const Nav = ({ courses = null }) => {
             </div>
           </div>
           <div className={styles.link}>
-            <Link
-              href="/about"
-              title="Learn more about us"
-              style={
-                pathname == "/about"
-                  ? { color: "#0070f3", fontWeight: 700 }
-                  : {}
-              }
-            >
-              About
-            </Link>
+            <div className={styles.dp}>
+              <Link
+                href="/about"
+                title="Learn more about us"
+                style={
+                  pathname == "/about"
+                    ? { color: "#0070f3", fontWeight: 700 }
+                    : {}
+                }
+              >
+                About
+              </Link>
+              <Image
+                src={Expand}
+                alt="Expand"
+                width={15}
+                height={15}
+                onClick={() => toggleSubMenu("home")}
+              />
+            </div>
             <div className={styles.sublinks}>
               <a onClick={() => handleNavigation("/about#why")}>Why Us</a>
               <a onClick={() => handleNavigation("/about#achievers")}>
@@ -122,17 +143,26 @@ const Nav = ({ courses = null }) => {
             </div>
           </div>
           <div className={styles.link}>
-            <Link
-              href="/courses"
-              title="Explore our expert-led courses"
-              style={
-                pathname.includes("courses")
-                  ? { color: "#0070f3", fontWeight: 700 }
-                  : {}
-              }
-            >
-              Courses
-            </Link>
+            <div className={styles.dp}>
+              <Link
+                href="/courses"
+                title="Explore our expert-led courses"
+                style={
+                  pathname.includes("courses")
+                    ? { color: "#0070f3", fontWeight: 700 }
+                    : {}
+                }
+              >
+                Courses
+              </Link>
+              <Image
+                src={Expand}
+                alt="Expand"
+                width={15}
+                height={15}
+                onClick={() => toggleSubMenu("home")}
+              />
+            </div>
             <div className={styles.sublinks}>
               {courses.map((course) => (
                 <Link key={course.id} href={`/courses/${course.slug}`}>

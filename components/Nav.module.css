@@ -21,6 +21,17 @@
   font-size: smaller;
   color: rgb(42, 42, 42);
 }
+.stick > p {
+  color: white;
+  font-weight: bold;
+  font-size: small;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.stick > p > span {
+  color: #333;
+}
 .nav {
   display: flex;
   justify-content: space-between;
@@ -55,6 +66,11 @@
   color: #333;
 }
 
+.dp {
+  display: flex;
+  align-items: center;
+}
+
 .link a {
   text-decoration: none;
   color: inherit;
@@ -68,6 +84,7 @@
 
 .link:hover .sublinks {
   display: block;
+  margin-top: 0;
 }
 
 .sublinks {

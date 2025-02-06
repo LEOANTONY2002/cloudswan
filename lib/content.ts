@@ -123,6 +123,8 @@ export const companies = [
   },
 ];
 
+export const videos = ["H8xllNtB1YM", "n07Mu1C4kIA", "njpmB5gcIWc"];
+
 export const benefits = [
   {
     _id: "1",

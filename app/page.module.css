@@ -221,14 +221,17 @@
 }
 
 .videos {
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 50px;
-  overflow-y: scroll;
+  overflow-x: scroll;
+  padding: 0 30px;
 }
 .videos > div {
   width: 100%;
+  min-width: 50vw;
   background: linear-gradient(120deg, #ecf4ff, #f8f0ff);
   padding: 20px;
 }
@@ -373,6 +376,5 @@
   }
   .videos {
     gap: 20px;
-    flex-direction: column;
   }
 }
