@@ -11,6 +11,7 @@ const Enroll = ({ course = null }) => {
   const [email, setEmail] = useState("");
   const [mobile, setMobile] = useState("");
   const [mode, setMode] = useState("");
+  const [location, setLocation] = useState(null);
   const [error, setError] = useState(null);
   const [isSuccess, setIsSuccess] = useState(false);
   const [isLoading, setIsLoding] = useState(false);
@@ -19,7 +20,13 @@ const Enroll = ({ course = null }) => {
     setError(null);
     setIsSuccess(false);
     setIsLoding(false);
-    if (name == "" || email == "" || mobile == "" || mode == "") {
+    if (
+      name == "" ||
+      email == "" ||
+      mobile == "" ||
+      mode == "" ||
+      location == null
+    ) {
       setError("Fill all the fields!");
     } else {
       // window.location.href = `mailto:mail.cloudswan@gmail.com?subject=Training Enquiry&body=Name: ${name} \nEmail: ${email} \nMobile: ${mobile} \nClass Mode: ${mode} \n${
@@ -31,7 +38,7 @@ const Enroll = ({ course = null }) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name, email, mobile, mode, course }),
+        body: JSON.stringify({ name, email, mobile, mode, course, location }),
       });
 
       const data = await response.json();
@@ -88,6 +95,17 @@ const Enroll = ({ course = null }) => {
             ></p>
             <span>Online</span>
           </div>
+          <select onChange={(e) => setLocation(e.target.value)}>
+            <option selected disabled>
+              Location
+            </option>
+            <option value="Lakshmi Mills, Coimbatore">
+              Lakshmi Mills, Coimbatore
+            </option>
+            <option value="Gandhipuram, Coimbatore">
+              Gandhipuram, Coimbatore
+            </option>
+          </select>
           {error && <span>{error}</span>}
           <button onClick={() => sendMail()}>Enroll</button>
           {isLoading && (

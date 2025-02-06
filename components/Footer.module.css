@@ -44,6 +44,7 @@
 }
 .social > img {
   filter: brightness(150%);
+  display: none;
 }
 .social > a {
   display: grid;
@@ -109,6 +110,7 @@
   .social > img {
     width: 50px;
     height: 50px;
+    display: initial;
   }
   .social > a {
     width: 40px;

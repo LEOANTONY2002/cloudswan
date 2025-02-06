@@ -1,0 +1,111 @@
+.enroll {
+  width: max-content;
+  padding: 50px;
+  border-radius: 30px;
+  gap: 50px;
+  background-color: white;
+  backdrop-filter: blur(20px);
+  margin-top: 70px;
+}
+.enroll > h2 {
+  font-size: 20px;
+  background: linear-gradient(120deg, var(--courseTitle1), var(--courseTitle2));
+  color: transparent;
+  background-clip: text;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.enroll > h2 > span:first-of-type {
+  width: 70px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(44, 0, 167, 0.512));
+}
+.enroll > h2 > span:last-of-type {
+  width: 70px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(44, 0, 167, 0.512), transparent);
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.form > input,
+.form > select {
+  width: 300px;
+  height: 45px;
+  border: 1px solid var(--inputBorder);
+  background-color: var(--inputBG);
+  border-radius: 10px;
+  text-indent: 10px;
+  padding-right: 20px;
+}
+.form > span {
+  color: rgb(255, 161, 161);
+  font-size: small;
+  text-align: center;
+}
+.form > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.form > div > p {
+  width: 15px;
+  height: 15px;
+  border-radius: 3px;
+  background-color: rgb(245, 251, 255);
+  cursor: pointer;
+  border: 2px solid rgb(211, 239, 255);
+}
+.form > button {
+  height: 45px;
+  border-radius: 10px;
+  background: linear-gradient(
+    120deg,
+    var(--gradientButtonLight1),
+    var(--gradientButtonLight2)
+  );
+  font-weight: 600;
+  color: white;
+  box-shadow: -10px -10px 40px var(--shadowOpacity1),
+    10px 10px 40px var(--shadowOpacity2);
+  border: none;
+  cursor: pointer;
+}
+.form > h6 {
+  background: linear-gradient(
+    120deg,
+    var(--gradientButtonLight1),
+    var(--gradientButtonLight2)
+  );
+  background-clip: text;
+  color: transparent;
+  font-weight: 500;
+  font-size: medium;
+}
+.form > img {
+  width: 50px;
+}
+
+@media (max-width: 500px) {
+  .enroll > h2 {
+    font-size: 55px;
+  }
+  .enroll > div {
+    width: 90vw;
+    margin-top: -40px;
+    padding: 40px auto;
+  }
+  .enroll > div > img {
+    display: none;
+  }
+  .form > input {
+    width: 250px;
+  }
+}

@@ -29,7 +29,7 @@ export default async function Home() {
 
   return (
     <main className={styles.home}>
-      <HomeBanner />
+      <HomeBanner courses={courses} />
 
       <Highlight />
 

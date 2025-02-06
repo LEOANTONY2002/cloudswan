@@ -2,13 +2,13 @@
 
 import React, { useEffect, useState } from "react";
 import styles from "./HomeBanner.module.css";
-import Enroll from "./Enroll";
 import Image from "next/image";
 import Phone from "@/public/images/HomePhone.webp";
 import Location from "@/public/images/HomeLocation.webp";
 import Logo from "@/public/images/logo.webp";
+import EnrollHome from "./EnrollHome";
 
-const HomeBanner = () => {
+const HomeBanner = ({ courses }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -47,7 +47,7 @@ const HomeBanner = () => {
       {isOpen && (
         <div onClick={() => setIsOpen(!isOpen)} className={styles.modal}>
           <div onClick={(e) => e.stopPropagation()}>
-            <Enroll />
+            <EnrollHome courses={courses} />
           </div>
         </div>
       )}

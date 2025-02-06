@@ -18,15 +18,24 @@ var mailOptions = {
   text: "",
 };
 
+const locations = [
+  {
+    name: "Lakshmi Mills, Coimbatore",
+    mail: "mail.cloudswan@gmail.com",
+  },
+  {
+    name: "Lakshmi Mills, Coimbatore",
+    mail: "cloudswansolution@gmail.com",
+  },
+];
+
 export async function POST(req) {
   const data = await req.json();
-  const { name, email, mobile, mode, course } = data;
+  const { name, email, mobile, mode, course, location } = data;
 
   try {
     mailOptions.from = email;
-    mailOptions.text = course
-      ? `Name: ${name} \nEmail: ${email} \nMobile: ${mobile} \nClass Mode: ${mode} \nCourse: ${course}`
-      : `Name: ${name} \nEmail: ${email} \nMobile: ${mobile} \nClass Mode: ${mode}`;
+    mailOptions.text = `Name: ${name} \nEmail: ${email} \nMobile: ${mobile} \nCourse: ${course} \nClass Mode: ${mode} \nLocation: ${location}`;
     let mail = await transporter.sendMail(mailOptions);
     if (mail) {
       return new Response(JSON.stringify({ success: true, msg: mail }), {
