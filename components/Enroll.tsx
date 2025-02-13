@@ -25,31 +25,49 @@ const Enroll = ({ course = null }) => {
       email == "" ||
       mobile == "" ||
       mode == "" ||
+      course == null ||
       location == null
     ) {
       setError("Fill all the fields!");
     } else {
-      // window.location.href = `mailto:mail.cloudswan@gmail.com?subject=Training Enquiry&body=Name: ${name} \nEmail: ${email} \nMobile: ${mobile} \nClass Mode: ${mode} \n${
-      //   course && `Course: ${course}`
-      // }`;
-      setIsLoding(true);
-      const response = await fetch("/api/enroll", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name, email, mobile, mode, course, location }),
-      });
-
-      const data = await response.json();
-      if (data?.success) {
-        console.log(data?.msg);
-        setIsSuccess(true);
-        setIsLoding(false);
+      let match = email
+        .toLowerCase()
+        .match(
+          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        );
+      if (!match) {
+        setError("Enter a valid Email");
       } else {
-        setIsLoding(false);
-        setError("Something went wromg!");
-        console.error(data?.msg);
+        if (mobile.length < 10) {
+          setError("Enter a valid Mobile Number");
+        } else {
+          setIsLoding(true);
+          const response = await fetch("/api/enroll", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              name,
+              email,
+              mobile,
+              mode,
+              course,
+              location,
+            }),
+          });
+
+          const data = await response.json();
+          if (data?.success) {
+            console.log(data?.msg);
+            setIsSuccess(true);
+            setIsLoding(false);
+          } else {
+            setIsLoding(false);
+            setError("Something went wromg!");
+            console.error(data?.msg);
+          }
+        }
       }
     }
   };

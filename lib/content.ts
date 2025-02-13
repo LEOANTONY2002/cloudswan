@@ -44,15 +44,15 @@ export const highlights = [
     title: "Excellence Years of Service",
   },
   {
-    count: "500+",
+    count: "100+",
     title: "Career Courses",
   },
   {
-    count: "800+",
+    count: "1000+",
     title: "Valued Recruiters",
   },
   {
-    count: "5000+",
+    count: "10000+",
     title: "Students Certified",
   },
 ];

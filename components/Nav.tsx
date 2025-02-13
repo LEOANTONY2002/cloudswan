@@ -79,9 +79,9 @@ const Nav = ({ courses = null }) => {
         </span>
       </div>
       <nav className={styles.nav}>
-        <div className={styles.logo}>
+        <Link href={"/"} className={styles.logo}>
           <Image src={Logo} alt="Logo" width={200} height={60} />
-        </div>
+        </Link>
         <div className={styles.links}>
           <div className={styles.link}>
             <div className={styles.dp}>

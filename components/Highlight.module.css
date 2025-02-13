@@ -14,6 +14,7 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  z-index: 0;
 }
 .highlights > div > div {
   display: flex;
@@ -24,7 +25,7 @@
   margin-bottom: 20px;
 }
 .highlights > div > div > h2 {
-  font-size: 90px;
+  font-size: 70px;
   font-weight: bolder;
   margin-bottom: -50px;
   color: transparent;

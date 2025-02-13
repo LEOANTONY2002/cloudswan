@@ -47,7 +47,7 @@ const HomeBanner = ({ courses }) => {
       {isOpen && (
         <div onClick={() => setIsOpen(!isOpen)} className={styles.modal}>
           <div onClick={(e) => e.stopPropagation()}>
-            <EnrollHome courses={courses} />
+            <EnrollHome courses={courses} setOpen={setIsOpen} />
           </div>
         </div>
       )}

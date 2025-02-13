@@ -121,6 +121,7 @@
   place-content: center;
   backdrop-filter: blur(20px);
   background-color: #18004a16;
+  z-index: 10;
 }
 
 @media (max-width: 600px) {

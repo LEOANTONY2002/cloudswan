@@ -7,13 +7,13 @@ var transporter = nodemailer.createTransport({
   secure: true,
   auth: {
     user: "mail.cloudswan@gmail.com",
-    pass: "rxgw znvm hjan ifcx",
+    pass: "jlmt hacc shnw rhyf",
   },
 });
 
 var mailOptions = {
+  to: "cloudswansolution@gmail.com",
   from: "",
-  to: "mail.cloudswan@gmail.com",
   subject: "Course Enquiry",
   text: "",
 };
