@@ -1,122 +1,108 @@
 .testimonials {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  margin-bottom: 100px;
 }
 .testimonials > h2 {
-    font-size: 36px;
-    font-weight: 900;
-    width: max-content;
-    background: linear-gradient(
-    90deg,
-    var(--title1),
-    var(--title2)
-  );
+  font-size: 36px;
+  font-weight: 900;
+  width: max-content;
+  background: linear-gradient(90deg, var(--title1), var(--title2));
   color: transparent;
   background-clip: text;
   text-align: center;
 }
 .testimonials > p {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--text2Dark);
-    margin-top: -10px;
-    text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text2Dark);
+  margin-top: -10px;
+  text-align: center;
 }
 .list {
-    width: 100vw;
-    display: flex;
-    align-items: flex-start;
-    overflow-x: scroll;
-    padding: 50px;
-    gap: 40px;
+  width: 100vw;
+  display: flex;
+  align-items: flex-start;
+  overflow-x: scroll;
+  padding: 50px;
+  gap: 40px;
 }
 .testimonial {
-    min-width: 400px;
-    max-width: 600px;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    border-radius: 30px;
-    background: linear-gradient(
-    270deg,
-    var(--testGrad1),
-    var(--testGrad2)
-  );
+  min-width: 400px;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 30px;
+  background: linear-gradient(270deg, var(--testGrad1), var(--testGrad2));
   box-shadow: 5px 15px 40px #e7e7e755;
 }
 .profile {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 .profile > img {
-    width: 50px;
-    height: 50px;
-    border-radius: 15px;
-    background: linear-gradient(
-        120deg,
-        var(--profile1),
-        var(--profile2)
-    );
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  background: linear-gradient(120deg, var(--profile1), var(--profile2));
 }
 .profile > div > p {
-    font-weight: 700;
-    margin-bottom: -5px;
+  font-weight: 700;
+  margin-bottom: -5px;
 }
 .profile > div > span {
-    font-weight: 600;
-    font-size: small;
-    background: linear-gradient(
-        90deg,
-        var(--title1),
-        var(--title2)
-    );
-    color: transparent;
-    background-clip: text;
+  font-weight: 600;
+  font-size: small;
+  background: linear-gradient(90deg, var(--title1), var(--title2));
+  color: transparent;
+  background-clip: text;
 }
 .line {
-    display: flex;
-    padding-left: 25px;
+  display: flex;
+  padding-left: 25px;
+}
+.line > div {
+  margin-top: 10px;
 }
 .line > span {
-    width: 7px;
-    height: 80px;
-    background: linear-gradient(var(--profile1), var(--profile2), transparent);
-    margin-right: 20px;
+  width: 7px;
+  height: 80px;
+  background: linear-gradient(var(--profile1), var(--profile2), transparent);
+  margin-right: 20px;
 }
 .line > p {
-    font-size: small;
-    padding: 20px 20px 20px 10px;
-
+  font-size: small;
+  padding: 20px 20px 20px 10px;
 }
 .collapsed {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .expanded {
-    display: block;
+  display: block;
 }
 .show {
-    font-size: small;
-    text-decoration: underline;
-    color: blueviolet;
-    cursor: pointer;
+  font-size: small;
+  text-decoration: underline;
+  color: blueviolet;
+  cursor: pointer;
 }
 
 @media (max-width: 500px) {
-    .list {
-        padding: 30px;
-        gap: 30px;
-    }
-    .testimonial {
-        min-width: 300px;
-        max-width: 300px;
-    }
+  .list {
+    padding: 30px;
+    gap: 30px;
+  }
+  .testimonial {
+    min-width: 300px;
+    max-width: 300px;
+  }
 }

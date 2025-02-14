@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import styles from "./Testimonial.module.css";
 import Image from "next/image";
 import Person from "@/public/images/Person.webp";
+import Star from "@/public/images/Star.webp";
 
 const TestimonialCard = ({ testimonial }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -38,6 +39,7 @@ const TestimonialCard = ({ testimonial }) => {
       <div className={styles.line}>
         <span></span>
         <div>
+          <Image src={Star} height={20} alt={"Star Rating"} />
           <p className={isExpanded ? styles.expanded : styles.collapsed}>
             {testimonial?.message}
           </p>

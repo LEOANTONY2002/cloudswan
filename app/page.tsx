@@ -71,7 +71,7 @@ export default async function Home() {
       </section>
 
       <section id="cloud" className={styles.cloud}>
-        <h2>Cloud Certifications</h2>
+        <h2>Certifications</h2>
         <div>
           {cloud?.map((course: any) => (
             <div className={styles.course}>
@@ -79,8 +79,8 @@ export default async function Home() {
                 <Image
                   src={course.photo}
                   alt={course.name}
-                  width={150}
-                  height={150}
+                  width={60}
+                  height={60}
                 />
               </div>
               {/* <h3>{course.name}</h3> */}

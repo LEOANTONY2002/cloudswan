@@ -91,7 +91,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  gap: 20px;
+  gap: 30px;
   margin-top: -50px;
 }
 
@@ -157,6 +157,22 @@
 .trend > a,
 .cloud > a {
   margin-top: 30px;
+}
+
+.cloud > div > div {
+  width: 12vw;
+}
+.cloud .course h2 {
+  font-size: 12px;
+  width: 180px;
+}
+.cloud .course span {
+  font-size: 10px;
+  width: 180px;
+}
+.cloud .imgs img {
+  width: 180px;
+  height: 180px;
 }
 
 .online {

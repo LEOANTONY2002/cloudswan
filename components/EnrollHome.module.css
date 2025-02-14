@@ -23,7 +23,7 @@
 }
 .highlights {
   padding: 50px 100px 50px 50px;
-  background: linear-gradient(120deg, var(--courseTitle1), var(--courseTitle2));
+  background: linear-gradient(120deg, rgb(0, 157, 255), rgb(117, 2, 156));
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
   color: white;
